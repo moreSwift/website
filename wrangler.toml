@@ -1,0 +1,4 @@
+name = "moreSwift-website"
+
+[site]
+bucket = "./.svelte-kit/cloudflare"
