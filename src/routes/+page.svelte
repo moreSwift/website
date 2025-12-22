@@ -1,11 +1,11 @@
 <script lang="ts">
   import ActionButton from "$lib/ActionButton.svelte";
-  import musicPlayerImage from "$lib/assets/music-player-appkitbackend.png";
+  import musicPlayerImage from "$lib/assets/music-player-appkitbackend.webp";
   import "$lib/assets/jetbrainsmono.css";
 
-  import windowsLogo from "$lib/assets/windows-logo.png";
-  import appleLogo from "$lib/assets/apple-logo.png";
-  import linuxLogo from "$lib/assets/linux-logo.png";
+  import windowsLogo from "$lib/assets/windows-logo.webp";
+  import appleLogo from "$lib/assets/apple-logo.webp";
+  import linuxLogo from "$lib/assets/linux-logo.webp";
 </script>
 
 <style>
