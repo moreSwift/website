@@ -16,7 +16,7 @@
 	}
 
 	main {
-		max-width: 80ch;
+		max-width: min(80ch, calc(100% - 1rem));
 		margin: auto;
 	}
 </style>

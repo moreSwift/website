@@ -42,11 +42,25 @@
 
 	img {
 		height: 1.5rem;
-		padding-top: 0.4rem;
+		padding-top: 0.3rem;
 	}
 
 	#sponsor-link {
 		color: #ef2f86;
+	}
+
+	@media screen and (max-width: 600px) {
+		nav {
+			font-size: 0.9rem;
+		}
+
+		img {
+			padding-top: 0.2rem;
+		}
+
+		#tabs {
+			gap: 1rem;
+		}
 	}
 </style>
 
