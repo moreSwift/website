@@ -25,7 +25,7 @@
   }
 
   #hero-image {
-    width: min(120%, 95vw);
+    width: min(140%, 95vw);
     border-radius: 1rem;
     margin-left: 50%;
     transform: translateX(-50%);

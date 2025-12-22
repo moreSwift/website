@@ -20,6 +20,8 @@
 		font-weight: regular;
 		padding: 0.3rem 0.5rem;
 		align-items: center;
+		max-width: 160ch;
+		margin: auto;
 	}
 
 	ul {
