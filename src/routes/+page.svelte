@@ -50,7 +50,7 @@
 
 	@media screen and (max-width: 600px) {
 		#hero {
-		  margin-top: 4rem;
+		  margin-top: 3rem;
 		  margin-bottom: 3rem;
 		}
 	}
