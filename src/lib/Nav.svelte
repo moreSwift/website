@@ -4,7 +4,7 @@
 
   let links = [
   	["GitHub", "https://github.com/moreSwift"],
-  	["Discord", "https://discord.gg/fw2trT48ny"],
+  	["Discord", "/discord"],
   	["Sponsor", "https://github.com/sponsors/stackotter"]
   ]
 </script>
