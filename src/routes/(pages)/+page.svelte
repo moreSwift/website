@@ -59,7 +59,7 @@
 <section id="hero">
   <h1 id="tagline">Target 6 platforms, with one Swift codebase.</h1>
   <div id="call-to-action">
-    <ActionButton title="Start building" href="https://moreswift.github.io/swift-cross-ui/documentation/swiftcrossui/quick-start/" />
+    <ActionButton title="Start building" href="https://docs.swiftcrossui.dev/tutorials/swiftcrossui/quick-start" />
     <div id="platform-logos">
       <img src={windowsLogo} alt="The Windows logo" />
       <img src={appleLogo} alt="The Apple logo" />
