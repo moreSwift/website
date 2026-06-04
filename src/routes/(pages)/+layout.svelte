@@ -18,6 +18,8 @@
 	main {
 		max-width: min(80ch, calc(100% - 1rem));
 		margin: auto;
+		display: flex;
+		flex-direction: column;
 	}
 </style>
 

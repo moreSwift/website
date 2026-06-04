@@ -13,8 +13,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 6rem;
-    margin-bottom: 5rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
   }
 
   #tagline {

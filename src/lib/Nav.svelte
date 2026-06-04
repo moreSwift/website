@@ -3,9 +3,9 @@
   import "$lib/assets/jetbrainsmono.css";
 
   let links = [
+  	["Sponsor", "https://opencollective.com/moreswift"],
   	["GitHub", "https://github.com/moreSwift"],
   	["Discord", "/discord"],
-  	["Sponsor", "https://github.com/sponsors/stackotter"]
   ]
 </script>
 
@@ -15,12 +15,12 @@
 		width: 100%;
 		box-sizing: border-box;
 		justify-content: space-between;
-		font-size: 1.2rem;
+		font-size: 1.4rem;
 		font-family: JetBrainsMono;
 		font-weight: regular;
 		padding: 0.3rem 0.5rem;
 		align-items: center;
-		max-width: 160ch;
+		max-width: 130ch;
 		margin: auto;
 	}
 
