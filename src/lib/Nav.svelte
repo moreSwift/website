@@ -1,6 +1,5 @@
 <script lang="ts">
 	import logo from "$lib/assets/logo.svg";
-  import "$lib/assets/jetbrainsmono.css";
 
   let links = [
   	["Sponsor", "https://opencollective.com/moreswift"],
@@ -16,8 +15,7 @@
 		box-sizing: border-box;
 		justify-content: space-between;
 		font-size: 1.4rem;
-		font-family: JetBrainsMono;
-		font-weight: regular;
+		font-weight: 500;
 		padding: 0.3rem 0.5rem;
 		align-items: center;
 		max-width: 130ch;
@@ -53,7 +51,7 @@
 
 	@media screen and (max-width: 600px) {
 		nav {
-			font-size: 0.9rem;
+			font-size: 1rem;
 		}
 
 		img {
