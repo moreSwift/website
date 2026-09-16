@@ -6,10 +6,17 @@
 2. To convert images to webp, use ImageMagick or some other tool that correctly handles colorspaces. See Figure 1.1. Tools such as `cwebp` can result in washed out colours.
 3. Resize images to the size they'll be used at.
 
-```
+```sh
 magick file.png -resize 1400 file.webp
 ```
 Figure 1.1: *command to convert png to webp*
+
+You can also perform bulk conversions;
+
+```sh
+magick mogrify -format webp -quality 80 -resize 1400 *.png
+```
+Figure 1.2: *command to bulk convert png to webp*
 
 > [!NOTE]
 > We could perform some of these conversions automatically at build time, but doing so at development time avoids the git repository getting unnecessarily large.
