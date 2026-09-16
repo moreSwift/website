@@ -16,7 +16,7 @@
 		justify-content: space-between;
 		font-size: 1.7rem;
 		font-weight: 500;
-		padding: 0.3rem 0.5rem;
+		padding: 0.3rem 1.5rem;
 		align-items: center;
 		max-width: 120ch;
 		margin: auto;
@@ -52,6 +52,7 @@
 	@media screen and (max-width: 600px) {
 		nav {
 			font-size: 1rem;
+			padding: 0.3rem 0.6rem;
 		}
 
 		img {
