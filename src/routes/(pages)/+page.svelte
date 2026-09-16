@@ -49,6 +49,7 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    margin-top: 1rem;
   }
 
   #platform-logos {
@@ -86,14 +87,14 @@
 </style>
 
 <section id="hero">
-  <h1 id="tagline">Native applications beat webviews everywhere, except cost. <b>We're fixing that.</b></h1>
+  <h1 id="tagline">Native apps cost more.<br> <b>We're changing that.</b></h1>
   <div id="call-to-action">
     <ActionButton title="Start building" href="https://docs.swiftcrossui.dev/tutorials/swiftcrossui/quick-start" />
     <div id="platform-logos">
+      <img src={windowsLogo} alt="The Windows logo" />
       <img src={appleLogo} alt="The Apple logo" />
       <img src={androidLogo} alt="The Android logo" />
       <img src={linuxLogo} alt="The Linux logo" />
-      <img src={windowsLogo} alt="The Windows logo" />
     </div>
   </div>
 </section>
