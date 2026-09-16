@@ -14,11 +14,11 @@
 		width: 100%;
 		box-sizing: border-box;
 		justify-content: space-between;
-		font-size: 1.4rem;
+		font-size: 1.7rem;
 		font-weight: 500;
 		padding: 0.3rem 0.5rem;
 		align-items: center;
-		max-width: 130ch;
+		max-width: 120ch;
 		margin: auto;
 	}
 

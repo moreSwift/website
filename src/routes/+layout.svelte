@@ -7,6 +7,7 @@
 <style>
 	:root {
 		font-family: "Inter", sans-serif;
+		--font-scale: 1.2;
 	}
 
 	:global {
@@ -17,27 +18,27 @@
 		}
 
 		h6 {
-			font-size: 1.25rem;
+			font-size: calc(var(--font-scale) * 1rem);
 		}
 
 		h5 {
-			font-size: pow(1.25rem, 2);
+			font-size: calc(pow(var(--font-scale), 2) * 1rem);
 		}
 
 		h4 {
-			font-size: pow(1.25rem, 3);
+			font-size: calc(pow(var(--font-scale), 3) * 1rem);
 		}
 
 		h3 {
-			font-size: pow(1.25rem, 4);
+			font-size: calc(pow(var(--font-scale), 4) * 1rem);
 		}
 
 		h2 {
-			font-size: pow(1.25rem, 5);
+			font-size: calc(pow(var(--font-scale), 5) * 1rem);
 		}
 
 		h1 {
-			font-size: pow(1.25rem, 6);
+			font-size: calc(pow(var(--font-scale), 6) * 1rem);
 		}
 	}
 
@@ -53,8 +54,16 @@
 		main {
 			margin-bottom: 2rem;
 		}
+
+		:root {
+			--font-scale: 1.1;
+		}
 	}
 </style>
+
+<svelte:head>
+	<title>moreSwift</title>
+</svelte:head>
 
 <Nav />
 
