@@ -45,11 +45,9 @@
 				<img
 					src={project.mark}
 					alt={project.markAlt}
-					width="558"
-					height="275"
-					class={project.id === 'swiftcrossui'
-						? 'size-full object-cover'
-						: 'h-7 w-auto object-contain'}
+					width="418"
+					height="418"
+					class="size-full object-cover"
 				/>
 			</span>
 			<div class="min-w-0 flex-1">
@@ -96,24 +94,24 @@
 			{/each}
 		</ul>
 
-		<div class="mt-auto flex flex-wrap items-center gap-x-4 gap-y-2 pt-6">
+		<div class="mt-auto flex flex-wrap items-center gap-x-5 gap-y-2 pt-6">
 			<a
 				href={project.href}
 				class={cn(
-					'inline-flex items-center gap-1.5 text-[13px] font-semibold transition-colors',
+					'inline-flex items-center gap-2 text-[15px] font-bold underline-offset-4 transition-colors hover:underline',
 					theme.link
 				)}
 			>
 				{project.cta}
-				<ArrowRight class="size-3.5" weight="bold" aria-hidden="true" />
+				<ArrowRight class="size-4" weight="bold" aria-hidden="true" />
 			</a>
 			<a
 				href={project.github}
 				target="_blank"
 				rel="noreferrer"
-				class="ml-auto inline-flex items-center gap-1.5 text-[11px] font-medium text-ink-soft transition-colors hover:text-ink"
+				class="ml-auto inline-flex h-8 items-center gap-1.5 rounded-md border border-line bg-paper-deep/40 px-2.5 text-[12.5px] font-semibold text-ink transition-colors hover:border-ink/25 hover:bg-paper-deep"
 			>
-				<GithubLogo class="size-3.5" aria-hidden="true" />
+				<GithubLogo class="size-4" aria-hidden="true" />
 				GitHub
 			</a>
 		</div>

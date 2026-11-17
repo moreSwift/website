@@ -1,6 +1,5 @@
 <script lang="ts">
 	import * as Tabs from '$lib/components/ui/tabs/index.js';
-	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import ArrowRight from 'phosphor-svelte/lib/ArrowRight';
 	import ArrowUpRight from 'phosphor-svelte/lib/ArrowUpRight';
@@ -52,8 +51,8 @@
 			</h1>
 
 			<p class="prose-lead mt-6 max-w-[33rem]">
-				moreSwift is an independent, open-source collective building the tools that let you write
-				one Swift codebase and ship it natively to macOS, Windows, Linux, iOS and Android.
+				moreSwift is an open-source collective building tools that let you write one Swift codebase
+				and ship it natively to macOS, Windows, Linux, iOS and Android.
 			</p>
 
 			<div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -71,55 +70,48 @@
 					size="lg"
 					class="h-11 gap-2 rounded-md border-line bg-transparent px-5 text-[13px] font-semibold text-ink shadow-none hover:bg-paper-deep"
 				>
-					Explore the projects
+					Explore our projects
 				</Button>
 			</div>
 
-			<p class="mt-7 font-mono text-[9px] uppercase tracking-[0.14em] text-ink-soft">
-				MIT licensed <span class="px-1 text-line">/</span> Swift 6
-				<span class="px-1 text-line">/</span> Community funded
+			<p class="mt-6 text-[13px] leading-relaxed text-ink-soft">
+				moreSwift is community funded.
+				<a
+					href={site.sponsor}
+					target="_blank"
+					rel="noreferrer"
+					class="group ml-1 inline-flex items-center gap-1 font-semibold text-sponsor underline-offset-4 hover:underline"
+				>
+					Sponsor our work
+					<ArrowUpRight
+						class="size-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+						weight="bold"
+						aria-hidden="true"
+					/>
+				</a>
 			</p>
 		</div>
 
-		<div
-			class="relative mx-auto w-full max-w-[34rem] lg:max-w-none lg:border-l lg:border-line lg:pl-12"
-		>
+		<div class="relative mx-auto w-full max-w-[34rem] lg:max-w-none">
 			<div class="frame hard-shadow relative">
-				<div class="flex items-center gap-2 border-b border-line bg-paper-deep/60 px-4 py-2.5">
-					<span class="flex items-center gap-1.5" aria-hidden="true">
-						<span class="size-2 rounded-full border border-ink/20 bg-paper"></span>
-						<span class="size-2 rounded-full border border-ink/20 bg-paper"></span>
-						<span class="size-2 rounded-full border border-ink/20 bg-paper"></span>
-					</span>
-					<span class="ml-1 truncate font-mono text-[10px] text-ink-soft">
-						MusicPlayerExample
-					</span>
-					<Badge
-						variant="outline"
-						class="ml-auto h-auto rounded-[3px] border-scui/20 bg-scui-soft px-2 py-0.5 font-mono text-[8px] uppercase tracking-[0.08em] text-scui"
-					>
-						SwiftCrossUI
-					</Badge>
-				</div>
-
 				<Tabs.Root bind:value={selected} class="gap-0">
 					<div
-						class="flex items-center justify-between gap-3 border-b border-line bg-card px-4 py-2"
+						class="flex flex-wrap items-center justify-between gap-3 border-b border-line bg-card px-4 py-3"
 					>
-						<Tabs.List class="h-auto gap-0 rounded-[3px] border border-line bg-card p-0">
+						<Tabs.List class="h-9 gap-1 rounded-md border border-line bg-paper-deep/50 p-1">
 							{#each previews as preview (preview.id)}
 								<Tabs.Trigger
 									value={preview.id}
-									class="h-7 rounded-none border-r border-line px-2.5 font-mono text-[9px] uppercase tracking-[0.06em] text-ink-soft last:border-r-0 data-active:bg-ink data-active:text-paper"
+									class="h-7 rounded-[4px] border-0 px-3 font-mono text-[10px] tracking-[0.01em] text-ink-soft hover:text-ink data-active:bg-ink data-active:text-paper data-active:hover:text-paper!"
 								>
 									{preview.label}
 								</Tabs.Trigger>
 							{/each}
 						</Tabs.List>
-						<span
-							class="hidden font-mono text-[9px] uppercase tracking-[0.1em] text-ink-soft sm:inline"
-						>
-							all native
+						<span class="font-mono text-[10px] text-ink-soft">
+							<span class="hidden sm:inline">MusicPlayerExample on</span>
+							<span class="sm:hidden">on</span>
+							<span class="ml-1 font-semibold text-ink">{current.label}</span>
 						</span>
 					</div>
 
@@ -137,39 +129,26 @@
 						</Tabs.Content>
 					{/each}
 				</Tabs.Root>
+			</div>
 
+			<div class="absolute -bottom-10 -left-7 z-10 hidden w-[7.6rem] rotate-[-3deg] sm:block">
 				<div
-					class="flex items-center justify-between gap-3 border-t border-line bg-card px-4 py-2.5"
+					class="relative rounded-[1.15rem] bg-[#3a3530] p-[3px] shadow-[4px_4px_0_rgba(28,25,22,0.16)] ring-1 ring-black/20"
 				>
-					<span class="text-[11px] text-ink-soft sm:pl-20">
-						MusicPlayerExample on <span class="font-semibold text-ink">{current.label}</span>
-					</span>
-					<span class="font-mono text-[9px] uppercase tracking-[0.1em] text-ink-soft">
-						one Swift codebase
-					</span>
+					<div class="rounded-[1.05rem] bg-black p-[2px] ring-1 ring-white/10">
+						<div class="overflow-hidden rounded-[0.95rem] bg-black">
+							<img
+								src="/images/showcase/ios.webp"
+								alt="MusicPlayerExample running on an iPhone"
+								width="553"
+								height="1200"
+								loading="lazy"
+								class="w-full"
+							/>
+						</div>
+					</div>
 				</div>
 			</div>
-
-			<div
-				class="absolute -bottom-9 -left-7 hidden w-[6.5rem] rotate-[-3deg] overflow-hidden rounded-md border border-ink/20 bg-ink shadow-[4px_4px_0_rgba(28,25,22,0.14)] sm:block"
-			>
-				<img
-					src="/images/showcase/ios.webp"
-					alt="MusicPlayerExample running on an iPhone"
-					width="553"
-					height="1200"
-					loading="lazy"
-					class="w-full"
-				/>
-			</div>
-
-			<a
-				href={site.swiftBundler}
-				class="mt-4 inline-flex items-center gap-1 font-mono text-[9px] uppercase tracking-[0.1em] text-ink-soft hover:text-ink sm:ml-24"
-			>
-				Built with Swift Bundler
-				<ArrowUpRight class="size-3" aria-hidden="true" />
-			</a>
 		</div>
 	</div>
 

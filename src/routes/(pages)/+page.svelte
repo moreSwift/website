@@ -6,7 +6,6 @@
 	import VideoCard from '$lib/components/site/VideoCard.svelte';
 	import ValueCard from '$lib/components/site/ValueCard.svelte';
 	import CommunityCard from '$lib/components/site/CommunityCard.svelte';
-	import StatsStrip from '$lib/components/site/StatsStrip.svelte';
 	import CodeWindow from '$lib/components/site/CodeWindow.svelte';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import ArrowRight from 'phosphor-svelte/lib/ArrowRight';
@@ -25,13 +24,7 @@
 <Hero />
 
 <Section id="projects">
-	<SectionHeading
-		index="01"
-		eyebrow="Projects"
-		title="Two projects."
-		titleAccent="One ecosystem."
-		lead="Use SwiftCrossUI for the interface and Swift Bundler for the build. Both are open source, independently maintained, and designed to work together."
-	>
+	<SectionHeading index="01" eyebrow="Projects" title="Two projects." titleAccent="One ecosystem.">
 		<Button
 			href={site.github}
 			variant="outline"
@@ -48,42 +41,33 @@
 	<div class="mt-10 grid gap-5 md:grid-cols-2">
 		<ProjectCard project={crossUI}>
 			{#snippet media()}
-				<img
-					src="/images/showcase/music-player-macos.webp"
-					alt="The MusicPlayerExample app running on macOS"
-					width="1600"
-					height="861"
-					loading="lazy"
-					class="h-full w-full object-contain object-center"
-				/>
+				<div class="flex h-full w-full items-center justify-center p-4 sm:p-5">
+					<img
+						src="/images/showcase/music-player-macos.webp"
+						alt="The MusicPlayerExample app running on macOS"
+						width="1600"
+						height="861"
+						loading="lazy"
+						class="max-h-full w-auto max-w-full rounded-[3px] border border-ink/10 object-contain"
+					/>
+				</div>
 			{/snippet}
 		</ProjectCard>
 
 		<ProjectCard project={bundler}>
 			{#snippet media()}
-				<div class="flex h-full flex-col p-3">
-					<CodeWindow title="sbun — zsh" class="h-full">
-						<div class="flex h-full flex-col justify-between gap-3">
-							<div class="space-y-1.5 font-mono text-[10.5px] leading-relaxed">
-								<p class="text-paper/85">
-									<span class="text-peach">$</span> sbun bundle -p macOS --universal
-								</p>
-								<p class="text-paper/40">✓ HelloWorld.app</p>
-								<p class="text-paper/40">✓ signed and ready to ship</p>
-								<p class="pt-1 text-paper/85">
-									<span class="text-peach">$</span> sbun run --hot
-								</p>
-								<p class="text-peach">● hot reload connected</p>
-							</div>
-							<div class="flex flex-wrap gap-1.5">
-								{#each ['macOS', 'Windows', 'Linux', 'Android'] as platform (platform)}
-									<span
-										class="rounded-[3px] border border-white/10 px-2 py-0.5 font-mono text-[8px] uppercase tracking-[0.08em] text-paper/45"
-									>
-										{platform}
-									</span>
-								{/each}
-							</div>
+				<div class="flex h-full items-center justify-center p-4 sm:p-5">
+					<CodeWindow title="sbun — zsh" class="w-full">
+						<div class="space-y-1.5 font-mono text-[10.5px] leading-relaxed">
+							<p class="text-paper/85">
+								<span class="text-peach">$</span> sbun bundle -p macOS --universal
+							</p>
+							<p class="text-paper/40">✓ HelloWorld.app</p>
+							<p class="text-paper/40">✓ signed and ready to ship</p>
+							<p class="pt-1 text-paper/85">
+								<span class="text-peach">$</span> sbun run --hot
+							</p>
+							<p class="text-peach">● hot reload connected</p>
 						</div>
 					</CodeWindow>
 				</div>
@@ -93,60 +77,50 @@
 </Section>
 
 <Section id="mission" tone="muted">
-	<SectionHeading
-		index="02"
-		eyebrow="About moreSwift"
-		title="A small collective,"
-		titleAccent="building in the open."
-		breakBeforeAccent
-		lead="We’re contributors who want Swift to work everywhere — without asking you to leave the language, or the native platform, behind."
-	/>
+	<div class="border-t border-line pt-4">
+		<p class="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-soft">
+			<span class="text-brand">02</span>
+			<span class="px-1.5">/</span>
+			About moreSwift
+		</p>
 
-	<div class="mt-10 grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
-		<div>
-			<p
-				class="font-display text-[1.65rem] leading-[1.25] tracking-[-0.015em] text-ink sm:text-[1.9rem]"
-			>
-				We build the tools we want to use, then give them away.
-			</p>
-			<div class="mt-5 space-y-4 text-[14px] leading-relaxed text-ink-soft">
-				<p>
-					moreSwift began with SwiftCrossUI and grew into a home for Swift tooling that crosses
-					platform boundaries. Today the organisation maintains both projects, with contributions
-					from people all over the world.
+		<div class="mt-5 grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16">
+			<div>
+				<h2
+					class="max-w-[44rem] text-[2.25rem] font-semibold leading-[1.04] tracking-[-0.025em] text-ink sm:text-[2.9rem]"
+				>
+					A small collective,<br />
+					<span class="italic text-brand">building in the open.</span>
+				</h2>
+				<p
+					class="mt-8 font-display text-[1.65rem] leading-[1.25] tracking-[-0.015em] text-ink sm:text-[1.9rem]"
+				>
+					We build the tools we want to use, then give them away.
 				</p>
-				<p>
-					There is no company behind the work and no paid tier. The projects are MIT licensed,
-					developed in public, and funded by sponsors and contributors who find them useful.
-				</p>
+				<div class="mt-5 space-y-4 text-[14px] leading-relaxed text-ink-soft">
+					<p>
+						moreSwift began with SwiftCrossUI and grew into a home for Swift tooling that crosses
+						platform boundaries. Today the organisation maintains both projects, with contributions
+						from people all over the world.
+					</p>
+					<p>
+						There is no company behind the work and no paid tier. The projects are MIT licensed,
+						developed in public, and funded by sponsors and contributors who find them useful.
+					</p>
+				</div>
 			</div>
-			<p
-				class="mt-8 border-l-2 border-brand pl-5 font-display text-[1.3rem] italic leading-snug text-ink"
-			>
-				Native isn’t a feature. It’s the baseline.
-			</p>
-		</div>
 
-		<div class="border-t border-line">
-			{#each values as value, index (value.title)}
-				<ValueCard number={String(index + 1).padStart(2, '0')} {value} />
-			{/each}
+			<div class="border-t border-line">
+				{#each values as value, index (value.title)}
+					<ValueCard number={String(index + 1).padStart(2, '0')} {value} />
+				{/each}
+			</div>
 		</div>
-	</div>
-
-	<div class="mt-12">
-		<StatsStrip />
 	</div>
 </Section>
 
 <Section id="videos">
-	<SectionHeading
-		index="03"
-		eyebrow="Videos"
-		title="What we’ve been"
-		titleAccent="building."
-		lead="Development updates, conference talks and demos from the people behind moreSwift."
-	>
+	<SectionHeading index="03" eyebrow="Videos" title="Keep up with" titleAccent="our progress.">
 		<Button
 			href={site.youtube}
 			variant="outline"
@@ -185,10 +159,14 @@
 	</div>
 
 	<div
-		class="mt-4 flex flex-col gap-5 border border-white/15 p-5 sm:flex-row sm:items-center sm:justify-between"
+		class="mt-4 flex flex-col gap-5 rounded-lg border border-white/15 p-5 sm:flex-row sm:items-center sm:justify-between"
 	>
-		<div class="flex items-start gap-3">
-			<Heart class="mt-0.5 size-4 shrink-0 text-peach" weight="fill" aria-hidden="true" />
+		<div class="flex items-center gap-3.5">
+			<span
+				class="grid size-10 shrink-0 place-items-center rounded-md border border-white/15 bg-white/[0.04] text-peach"
+			>
+				<Heart class="size-[18px]" weight="fill" aria-hidden="true" />
+			</span>
 			<div>
 				<p class="font-display text-lg font-semibold text-paper">
 					Building something with our tools?
@@ -206,6 +184,32 @@
 			<DiscordLogo class="size-4" aria-hidden="true" />
 			Share it on Discord
 			<ArrowRight class="size-4" weight="bold" aria-hidden="true" />
+		</Button>
+	</div>
+
+	<div
+		class="mt-4 flex flex-col gap-5 rounded-lg border border-sponsor/40 bg-sponsor/10 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6"
+	>
+		<div class="max-w-2xl">
+			<p class="font-mono text-[10px] uppercase tracking-[0.18em] text-sponsor-light">
+				Support the work
+			</p>
+			<h3 class="mt-2 font-display text-[1.6rem] font-semibold leading-tight text-paper">
+				Help keep moreSwift moving.
+			</h3>
+			<p class="mt-2 text-[13px] leading-relaxed text-paper/65">
+				Sponsorships fund maintenance, documentation, CI and new platform support. Every
+				contribution goes back into the open-source tools.
+			</p>
+		</div>
+		<Button
+			href={site.sponsor}
+			class="h-11 shrink-0 gap-2 rounded-md bg-sponsor px-5 text-[13px] font-semibold text-white hover:bg-[#9d174d]"
+			target="_blank"
+			rel="noreferrer"
+		>
+			<Heart class="size-4" weight="fill" aria-hidden="true" />
+			Sponsor on Open Collective
 		</Button>
 	</div>
 </Section>
