@@ -17,7 +17,7 @@
 
 <div
 	class={cn(
-		'flex h-full flex-col overflow-hidden rounded-md border',
+		'flex flex-col overflow-hidden rounded-md border',
 		tone === 'dark' ? 'border-white/10 bg-[#241c18] text-paper' : 'border-line bg-card text-ink',
 		className
 	)}

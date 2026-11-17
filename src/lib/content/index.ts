@@ -28,8 +28,8 @@ export const projects: Project[] = [
 			'Native backends, no web views',
 			'Six platforms, one codebase'
 		],
-		mark: '/images/showcase/scui-icon.png',
-		markAlt: 'The SwiftCrossUI app icon'
+		mark: '/images/showcase/swiftcrossui-logo.png',
+		markAlt: 'The SwiftCrossUI logo'
 	},
 	{
 		id: 'swift-bundler',
@@ -46,7 +46,7 @@ export const projects: Project[] = [
 			'Hot reload on macOS and Linux',
 			'One Bundler.toml with platform overlays'
 		],
-		mark: '/images/showcase/swift-bundler-crate.webp',
+		mark: '/images/showcase/swift-bundler-logo.webp',
 		markAlt: 'The Swift Bundler crate logo'
 	}
 ];

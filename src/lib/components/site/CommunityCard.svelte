@@ -49,16 +49,18 @@
 		<h3 class="mt-5 font-display text-xl font-semibold tracking-[-0.01em]">{link.title}</h3>
 		<p class="mt-2 text-[13px] leading-relaxed text-paper/60">{link.description}</p>
 
-		<div class="mt-5 flex items-center justify-between gap-2 border-t border-white/10 pt-3">
-			<span class="truncate font-mono text-[9px] tracking-[0.03em] text-paper/45"
-				>{link.handle}</span
-			>
-			<span
-				class={cn(
-					'shrink-0 text-[11px] font-semibold',
-					isSponsor ? 'text-sponsor-light' : 'text-peach'
-				)}>{link.cta}</span
-			>
+		<div class="mt-auto pt-5">
+			<div class="flex items-center justify-between gap-2 border-t border-white/10 pt-3">
+				<span class="truncate font-mono text-[9px] tracking-[0.03em] text-paper/45"
+					>{link.handle}</span
+				>
+				<span
+					class={cn(
+						'shrink-0 text-[11px] font-semibold',
+						isSponsor ? 'text-sponsor-light' : 'text-peach'
+					)}>{link.cta}</span
+				>
+			</div>
 		</div>
 	</Card.Root>
 </a>
