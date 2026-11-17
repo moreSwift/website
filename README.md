@@ -9,7 +9,7 @@ The homepage for [moreSwift](https://moreswift.dev), the open-source collective 
 - [Tailwind CSS](https://tailwindcss.com) v4
 - [shadcn-svelte](https://shadcn-svelte.com) components (in `src/lib/components/ui`)
 - [Phosphor](https://phosphoricons.com) icons via `phosphor-svelte`
-- Inter, Plus Jakarta Sans and JetBrains Mono, self-hosted with Fontsource
+- Source Serif 4, Source Sans 3 and JetBrains Mono, self-hosted with Fontsource
 
 ## Developing
 

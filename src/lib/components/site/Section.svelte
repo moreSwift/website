@@ -5,43 +5,31 @@
 	let {
 		id,
 		tone = 'default',
-		grid = false,
 		class: className = '',
 		children
 	}: {
 		id?: string;
-		tone?: 'default' | 'muted' | 'dark' | 'gradient';
-		grid?: boolean;
+		tone?: 'default' | 'muted' | 'dark';
 		class?: string;
 		children?: Snippet;
 	} = $props();
 
 	const tones = {
 		default: 'bg-background',
-		muted: 'bg-mist/70',
-		dark: 'bg-plum text-paper',
-		gradient: 'bg-gradient-to-b from-lilac/60 via-background to-background'
+		muted: 'bg-paper-deep/45',
+		dark: 'bg-ink text-paper'
 	};
 </script>
 
 <section
 	{id}
 	class={cn(
-		'relative overflow-hidden border-b py-20 sm:py-28',
-		tone === 'dark' ? 'border-white/10' : 'border-border/70',
+		'relative border-b py-20 sm:py-24',
+		tone === 'dark' ? 'border-white/10' : 'border-line',
 		tones[tone],
 		className
 	)}
 >
-	{#if grid}
-		<div
-			class={cn(
-				'pointer-events-none absolute inset-0 opacity-30',
-				tone === 'dark' ? 'dot-grid-light opacity-15' : 'dot-grid'
-			)}
-			aria-hidden="true"
-		></div>
-	{/if}
 	<div class="relative shell">
 		{@render children?.()}
 	</div>
