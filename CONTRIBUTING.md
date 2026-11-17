@@ -9,14 +9,16 @@
 ```sh
 magick file.png -resize 1400 file.webp
 ```
-Figure 1.1: *command to convert png to webp*
+
+Figure 1.1: _command to convert png to webp_
 
 You can also perform bulk conversions;
 
 ```sh
 magick mogrify -format webp -quality 80 -resize 1400 *.png
 ```
-Figure 1.2: *command to bulk convert png to webp*
+
+Figure 1.2: _command to bulk convert png to webp_
 
 > [!NOTE]
 > We could perform some of these conversions automatically at build time, but doing so at development time avoids the git repository getting unnecessarily large.

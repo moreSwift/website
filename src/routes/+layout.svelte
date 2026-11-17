@@ -1,72 +1,39 @@
 <script lang="ts">
-	import Nav from "$lib/Nav.svelte";
+	import './layout.css';
+	import SiteHeader from '$lib/components/site/SiteHeader.svelte';
+	import SiteFooter from '$lib/components/site/SiteFooter.svelte';
+	import { site } from '$lib/site';
 
 	let { children } = $props();
 </script>
 
-<style>
-	:root {
-		font-family: "Inter", sans-serif;
-		--font-scale: 1.2;
-	}
-
-	:global {
-		h1, h2, h3, h4, h5, h6 {
-			font-family: "Plus Jakarta Sans", sans-serif;
-			margin-top: 0;
-			margin-bottom: 1rem;
-		}
-
-		h6 {
-			font-size: calc(var(--font-scale) * 1rem);
-		}
-
-		h5 {
-			font-size: calc(pow(var(--font-scale), 2) * 1rem);
-		}
-
-		h4 {
-			font-size: calc(pow(var(--font-scale), 3) * 1rem);
-		}
-
-		h3 {
-			font-size: calc(pow(var(--font-scale), 4) * 1rem);
-		}
-
-		h2 {
-			font-size: calc(pow(var(--font-scale), 5) * 1rem);
-		}
-
-		h1 {
-			font-size: calc(pow(var(--font-scale), 6) * 1rem);
-		}
-	}
-
-	main {
-		max-width: min(80ch, calc(100% - 1rem));
-		margin: auto;
-		display: flex;
-		flex-direction: column;
-		margin-bottom: 4rem;
-	}
-
-	@media screen and (max-width: 600px) {
-		main {
-			margin-bottom: 2rem;
-		}
-
-		:root {
-			--font-scale: 1.1;
-		}
-	}
-</style>
-
 <svelte:head>
-	<title>moreSwift</title>
+	<title>moreSwift — Native Swift apps, everywhere</title>
+	<meta name="description" content={site.description} />
+	<meta property="og:title" content="moreSwift — Native Swift apps, everywhere" />
+	<meta property="og:description" content={site.description} />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://moreswift.dev/" />
+	<meta property="og:site_name" content="moreSwift" />
+	<meta property="og:image" content="https://moreswift.dev/og.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="moreSwift — Native Swift apps, everywhere" />
+	<meta name="twitter:description" content={site.description} />
+	<meta name="twitter:image" content="https://moreswift.dev/og.png" />
 </svelte:head>
 
-<Nav />
+<a
+	href="#main"
+	class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-sm focus:text-paper"
+>
+	Skip to content
+</a>
 
-<main>
+<div id="top"></div>
+<SiteHeader />
+<main id="main">
 	{@render children()}
 </main>
+<SiteFooter />

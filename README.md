@@ -1,38 +1,43 @@
-# sv
+# moreSwift website
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+The homepage for [moreSwift](https://moreswift.dev), the open-source collective behind
+[SwiftCrossUI](https://swiftcrossui.dev) and [Swift Bundler](https://swiftbundler.dev).
 
-## Creating a project
+## Stack
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```sh
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
+- [SvelteKit](https://svelte.dev/docs/kit) with the Cloudflare adapter
+- [Tailwind CSS](https://tailwindcss.com) v4
+- [shadcn-svelte](https://shadcn-svelte.com) components (in `src/lib/components/ui`)
+- [Phosphor](https://phosphoricons.com) icons via `phosphor-svelte`
+- Inter, Plus Jakarta Sans and JetBrains Mono, self-hosted with Fontsource
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
 ```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+bun install
+bun run dev
 ```
 
-## Building
+The dev server runs at <http://localhost:5175>.
 
-To create a production version of your app:
+Useful checks:
 
 ```sh
-npm run build
+bun run check   # svelte-check
+bun run lint    # prettier + eslint
+bun run build   # production build
 ```
 
-You can preview the production build with `npm run preview`.
+## Structure
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+- `src/routes/(pages)/+page.svelte` — homepage sections
+- `src/lib/components/site/` — page-level components (hero, header, project/video cards, etc.)
+- `src/lib/components/ui/` — shadcn-svelte primitives
+- `src/lib/content/` — projects, videos, values, community links and platform data
+- `src/lib/site.ts` — external URLs and navigation
+- `src/routes/layout.css` — theme tokens, fonts and shared utilities
+- `static/images/showcase/` — cross-platform app screenshots
+- `static/images/video-thumbnails/` — YouTube thumbnails
+
+Prefer reusing the shadcn primitives (or making a shared site component more generic) over
+writing bespoke markup for each section.
