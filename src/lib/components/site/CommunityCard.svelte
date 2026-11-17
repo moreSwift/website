@@ -5,6 +5,7 @@
 	import Heart from 'phosphor-svelte/lib/Heart';
 	import ArrowUpRight from 'phosphor-svelte/lib/ArrowUpRight';
 	import type { CommunityLink } from '$lib/content';
+	import { cn } from '$lib/utils.js';
 
 	let { link }: { link: CommunityLink } = $props();
 
@@ -15,6 +16,7 @@
 	};
 
 	const Icon = $derived(icons[link.icon]);
+	const isSponsor = $derived(link.icon === 'sponsor');
 </script>
 
 <a
@@ -24,33 +26,39 @@
 	class="group block h-full"
 >
 	<Card.Root
-		class="h-full gap-0 rounded-2xl bg-white/[0.045] p-6 text-paper ring-white/10 backdrop-blur transition duration-300 group-hover:-translate-y-1 group-hover:bg-white/[0.075] group-hover:ring-white/20"
+		class="h-full gap-0 rounded-lg border border-white/15 bg-transparent p-5 text-paper shadow-none ring-0 transition-colors group-hover:border-white/40 group-hover:bg-white/[0.025]"
 	>
 		<div class="flex items-start justify-between gap-3">
 			<span
-				class="grid size-11 place-items-center rounded-xl bg-white/[0.07] text-peach ring-1 ring-white/10 transition-colors group-hover:text-paper"
+				class={cn(
+					'grid size-10 place-items-center rounded-md border',
+					isSponsor
+						? 'border-sponsor/40 bg-sponsor/10 text-sponsor-light'
+						: 'border-white/15 bg-white/[0.04] text-peach'
+				)}
 			>
-				<Icon
-					class="size-5"
-					weight={link.icon === 'sponsor' ? 'fill' : 'regular'}
-					aria-hidden="true"
-				/>
+				<Icon class="size-[18px]" weight={isSponsor ? 'fill' : 'regular'} aria-hidden="true" />
 			</span>
 			<ArrowUpRight
-				class="size-4 text-white/30 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-paper"
+				class="size-4 text-paper/30 transition-colors group-hover:text-paper"
 				weight="bold"
 				aria-hidden="true"
 			/>
 		</div>
 
-		<h3 class="mt-5 text-lg font-bold tracking-[-0.02em]">{link.title}</h3>
+		<h3 class="mt-5 font-display text-xl font-semibold tracking-[-0.01em]">{link.title}</h3>
 		<p class="mt-2 text-[13px] leading-relaxed text-paper/60">{link.description}</p>
 
-		<div class="mt-5 flex items-center justify-between gap-2 border-t border-white/10 pt-4">
-			<span class="truncate font-mono text-[9px] tracking-[0.04em] text-paper/40"
+		<div class="mt-5 flex items-center justify-between gap-2 border-t border-white/10 pt-3">
+			<span class="truncate font-mono text-[9px] tracking-[0.03em] text-paper/45"
 				>{link.handle}</span
 			>
-			<span class="shrink-0 text-[11px] font-semibold text-peach">{link.cta}</span>
+			<span
+				class={cn(
+					'shrink-0 text-[11px] font-semibold',
+					isSponsor ? 'text-sponsor-light' : 'text-peach'
+				)}>{link.cta}</span
+			>
 		</div>
 	</Card.Root>
 </a>

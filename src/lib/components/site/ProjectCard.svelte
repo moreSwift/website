@@ -1,128 +1,121 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 	import * as Card from '$lib/components/ui/card/index.js';
-	import { Badge } from '$lib/components/ui/badge/index.js';
-	import { Button } from '$lib/components/ui/button/index.js';
 	import ArrowRight from 'phosphor-svelte/lib/ArrowRight';
 	import GithubLogo from 'phosphor-svelte/lib/GithubLogo';
 	import Check from 'phosphor-svelte/lib/Check';
 	import type { Project } from '$lib/content';
 	import { cn } from '$lib/utils.js';
 
-	let {
-		project,
-		tone = 'light',
-		media,
-		class: className = ''
-	}: {
-		project: Project;
-		tone?: 'light' | 'dark';
-		media: Snippet;
-		class?: string;
-	} = $props();
+	let { project, media }: { project: Project; media: Snippet } = $props();
+
+	const themes = {
+		swiftcrossui: {
+			bar: 'bg-scui',
+			tile: 'bg-scui-deep',
+			kicker: 'text-scui',
+			link: 'text-scui hover:text-scui-deep',
+			media: 'bg-scui-soft'
+		},
+		'swift-bundler': {
+			bar: 'bg-plum',
+			tile: 'bg-cream',
+			kicker: 'text-plum',
+			link: 'text-plum hover:text-ink',
+			media: 'bg-cream'
+		}
+	} as const;
+
+	const theme = $derived(themes[project.id]);
 </script>
 
 <Card.Root
-	class={cn(
-		'group h-full gap-0 overflow-hidden rounded-[1.75rem] py-0 ring-1 transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_70px_-28px_rgba(22,19,31,0.5)]',
-		tone === 'dark'
-			? 'bg-plum text-paper ring-white/10'
-			: 'bg-card text-card-foreground ring-ink/10',
-		className
-	)}
+	class="group flex h-full flex-col gap-0 overflow-hidden rounded-lg border border-line bg-card p-0 shadow-none ring-0 transition-colors hover:border-ink/30"
 >
-	<div class="relative overflow-hidden">{@render media()}</div>
+	<div class={cn('h-1.5 w-full', theme.bar)}></div>
 
 	<div class="flex flex-1 flex-col p-6 sm:p-7">
-		<div class="flex flex-wrap items-center gap-2.5">
+		<div class="flex items-start gap-3.5">
 			<span
 				class={cn(
-					'font-mono text-[10px] uppercase leading-none tracking-[0.16em]',
-					tone === 'dark' ? 'text-peach/80' : 'text-iris'
-				)}>{project.kicker}</span
+					'grid size-12 shrink-0 place-items-center overflow-hidden rounded-md border border-ink/10',
+					theme.tile
+				)}
 			>
-			{#if project.badge}
-				<Badge
-					variant="outline"
+				<img
+					src={project.mark}
+					alt={project.markAlt}
+					width="558"
+					height="275"
+					class={project.id === 'swiftcrossui'
+						? 'size-full object-cover'
+						: 'h-7 w-auto object-contain'}
+				/>
+			</span>
+			<div class="min-w-0 flex-1">
+				<h3 class="text-[1.55rem] font-bold leading-none tracking-[-0.025em] text-ink">
+					{project.name}
+				</h3>
+				<p
 					class={cn(
-						'h-auto rounded-full px-2 py-0.5 font-mono text-[9px] uppercase tracking-[0.08em]',
-						tone === 'dark'
-							? 'border-white/15 bg-white/5 text-paper/75'
-							: 'border-iris/15 bg-lilac text-iris'
-					)}>{project.badge}</Badge
+						'mt-2 font-mono text-[9px] uppercase leading-none tracking-[0.13em]',
+						theme.kicker
+					)}
 				>
-			{/if}
+					{project.kicker}
+				</p>
+			</div>
 		</div>
 
-		<h3
-			class={cn(
-				'mt-3 text-[1.65rem] font-bold leading-[1.05] tracking-[-0.035em] sm:text-[1.9rem]',
-				tone === 'dark' ? 'text-paper' : 'text-ink'
-			)}
-		>
+		<p class="mt-5 font-display text-[1.4rem] italic leading-snug text-ink/80">
 			{project.tagline}
-		</h3>
-
-		<p
-			class={cn(
-				'mt-3 text-[13.5px] leading-relaxed',
-				tone === 'dark' ? 'text-paper/65' : 'text-muted-foreground'
-			)}
-		>
+		</p>
+		<p class="mt-3 text-[13.5px] leading-relaxed text-ink-soft">
 			{project.description}
 		</p>
 
-		{#if project.features}
-			<ul class="mt-5 space-y-2.5">
-				{#each project.features as feature (feature)}
-					<li
-						class={cn(
-							'flex items-start gap-2.5 text-[13px] leading-snug',
-							tone === 'dark' ? 'text-paper/75' : 'text-ink-soft'
-						)}
-					>
-						<span
-							class={cn(
-								'mt-px grid size-[18px] shrink-0 place-items-center rounded-full',
-								tone === 'dark' ? 'bg-white/10 text-peach' : 'bg-lilac text-iris'
-							)}
-						>
-							<Check class="size-3" weight="bold" aria-hidden="true" />
-						</span>
-						{feature}
-					</li>
-				{/each}
-			</ul>
-		{/if}
+		<div
+			class={cn(
+				'mt-5 aspect-video min-h-[15rem] overflow-hidden rounded-md border border-line',
+				theme.media
+			)}
+		>
+			{@render media()}
+		</div>
 
-		<div class="mt-auto flex flex-wrap items-center gap-2 pt-7">
-			<Button
+		<ul class="mt-5 space-y-2 border-t border-line pt-4">
+			{#each project.features as feature (feature)}
+				<li class="flex items-start gap-2 text-[12.5px] leading-snug text-ink-soft">
+					<Check
+						class={cn('mt-0.5 size-3.5 shrink-0', theme.kicker)}
+						weight="bold"
+						aria-hidden="true"
+					/>
+					{feature}
+				</li>
+			{/each}
+		</ul>
+
+		<div class="mt-auto flex flex-wrap items-center gap-x-4 gap-y-2 pt-6">
+			<a
 				href={project.href}
-				size="lg"
 				class={cn(
-					'h-10 gap-2 px-4 text-[13px] font-semibold',
-					tone === 'dark'
-						? 'bg-paper text-plum hover:bg-white'
-						: 'bg-ink text-paper hover:bg-ink/90'
+					'inline-flex items-center gap-1.5 text-[13px] font-semibold transition-colors',
+					theme.link
 				)}
 			>
 				{project.cta}
-				<ArrowRight class="size-4" weight="bold" aria-hidden="true" />
-			</Button>
-			<Button
+				<ArrowRight class="size-3.5" weight="bold" aria-hidden="true" />
+			</a>
+			<a
 				href={project.github}
-				variant="ghost"
-				size="icon"
-				class={cn(
-					'rounded-full',
-					tone === 'dark'
-						? 'text-paper/60 hover:bg-white/10 hover:text-paper'
-						: 'text-muted-foreground hover:bg-muted hover:text-ink'
-				)}
-				aria-label={`${project.name} on GitHub`}
+				target="_blank"
+				rel="noreferrer"
+				class="ml-auto inline-flex items-center gap-1.5 text-[11px] font-medium text-ink-soft transition-colors hover:text-ink"
 			>
-				<GithubLogo class="size-4" aria-hidden="true" />
-			</Button>
+				<GithubLogo class="size-3.5" aria-hidden="true" />
+				GitHub
+			</a>
 		</div>
 	</div>
 </Card.Root>

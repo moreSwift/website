@@ -1,53 +1,61 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @import 'shadcn-svelte/tailwind.css';
-@import '@fontsource-variable/inter';
-@import '@fontsource-variable/plus-jakarta-sans';
+@import '@fontsource-variable/source-serif-4';
+@import '@fontsource-variable/source-sans-3';
 @import '@fontsource-variable/jetbrains-mono';
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
-	/* Warm paper base with a deep ink foreground */
-	--background: #f7f6f3;
-	--foreground: #16131f;
-	--card: #ffffff;
-	--card-foreground: #16131f;
-	--popover: #ffffff;
-	--popover-foreground: #16131f;
-	--primary: #4f46e5;
-	--primary-foreground: #ffffff;
-	--secondary: #ece8f7;
-	--secondary-foreground: #27223a;
-	--muted: #efede8;
-	--muted-foreground: #6c6779;
-	--accent: #f7e9f2;
-	--accent-foreground: #3a1338;
-	--destructive: #dc2626;
-	--border: #e3ded5;
-	--input: #e3ded5;
-	--ring: #7c6cf0;
-	--radius: 1rem;
+	/* Warm paper and ink */
+	--background: #f6f2e9;
+	--foreground: #1c1916;
+	--card: #fffdf8;
+	--card-foreground: #1c1916;
+	--popover: #fffdf8;
+	--popover-foreground: #1c1916;
+	--primary: #b8431f;
+	--primary-foreground: #fffaf4;
+	--secondary: #ece5d8;
+	--secondary-foreground: #2b2620;
+	--muted: #eee8dc;
+	--muted-foreground: #6b6155;
+	--accent: #f5e3d5;
+	--accent-foreground: #6b2a12;
+	--destructive: #b91c1c;
+	--border: #dcd3c3;
+	--input: #dcd3c3;
+	--ring: #b8431f;
+	--radius: 0.375rem;
 
-	/* moreSwift brand colours */
-	--paper: #f7f6f3;
-	--ink: #16131f;
-	--ink-soft: #4a4458;
-	--iris: #4f46e5;
-	--iris-deep: #3730a3;
-	--violet: #7c3aed;
-	--pink: #e8348a;
-	--pink-soft: #fce7f2;
-	--peach: #ffb27a;
-	--plum: #241436;
-	--plum-soft: #3a2351;
-	--lilac: #eeeaf9;
-	--mist: #f1eff4;
+	/* moreSwift brand */
+	--paper: #f6f2e9;
+	--paper-deep: #efe8db;
+	--ink: #1c1916;
+	--ink-soft: #5e554a;
+	--line: #dcd3c3;
+	--brand: #b8431f;
+	--brand-deep: #8f2f13;
+	--brand-soft: #f3ddcd;
+
+	/* Sponsor pink is only ever used for sponsorship */
+	--sponsor: #be185d;
+	--sponsor-soft: #fbe4ee;
+	--sponsor-light: #f9a8d4;
+
+	/* Project accents */
+	--scui: #1d4ed8;
+	--scui-deep: #0b1220;
+	--scui-soft: #e7edfd;
+	--plum: #70374d;
+	--peach: #f9d5b8;
+	--cream: #fff1e3;
 }
 
 @theme inline {
-	--font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
-	--font-display: 'Plus Jakarta Sans Variable', ui-sans-serif, system-ui, sans-serif;
+	--font-sans: 'Source Sans 3 Variable', ui-sans-serif, system-ui, sans-serif;
+	--font-display: 'Source Serif 4 Variable', ui-serif, Georgia, serif;
 	--font-mono: 'JetBrains Mono Variable', ui-monospace, SFMono-Regular, monospace;
 
 	--color-background: var(--background);
@@ -70,25 +78,29 @@
 	--color-ring: var(--ring);
 
 	--color-paper: var(--paper);
+	--color-paper-deep: var(--paper-deep);
 	--color-ink: var(--ink);
 	--color-ink-soft: var(--ink-soft);
-	--color-iris: var(--iris);
-	--color-iris-deep: var(--iris-deep);
-	--color-violet: var(--violet);
-	--color-pink: var(--pink);
-	--color-pink-soft: var(--pink-soft);
-	--color-peach: var(--peach);
+	--color-line: var(--line);
+	--color-brand: var(--brand);
+	--color-brand-deep: var(--brand-deep);
+	--color-brand-soft: var(--brand-soft);
+	--color-sponsor: var(--sponsor);
+	--color-sponsor-soft: var(--sponsor-soft);
+	--color-sponsor-light: var(--sponsor-light);
+	--color-scui: var(--scui);
+	--color-scui-deep: var(--scui-deep);
+	--color-scui-soft: var(--scui-soft);
 	--color-plum: var(--plum);
-	--color-plum-soft: var(--plum-soft);
-	--color-lilac: var(--lilac);
-	--color-mist: var(--mist);
+	--color-peach: var(--peach);
+	--color-cream: var(--cream);
 
-	--radius-sm: calc(var(--radius) - 4px);
-	--radius-md: calc(var(--radius) - 2px);
-	--radius-lg: var(--radius);
-	--radius-xl: calc(var(--radius) + 4px);
-	--radius-2xl: calc(var(--radius) + 8px);
-	--radius-3xl: calc(var(--radius) + 16px);
+	--radius-sm: calc(var(--radius) - 2px);
+	--radius-md: var(--radius);
+	--radius-lg: calc(var(--radius) + 2px);
+	--radius-xl: calc(var(--radius) + 6px);
+	--radius-2xl: calc(var(--radius) + 12px);
+	--radius-3xl: calc(var(--radius) + 18px);
 }
 
 @layer base {
@@ -113,116 +125,38 @@
 	h4,
 	h5,
 	h6 {
-		@apply font-display tracking-tight;
+		@apply font-display;
 	}
 
 	::selection {
-		background: color-mix(in srgb, var(--pink) 24%, transparent);
+		background: var(--brand-soft);
 		color: var(--ink);
 	}
 
 	:focus-visible {
-		outline: 2px solid var(--iris);
+		outline: 2px solid var(--brand);
 		outline-offset: 3px;
 	}
 }
 
 @layer components {
-	.eyebrow {
-		@apply font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-iris;
-	}
-
-	.gradient-text {
-		background-image: linear-gradient(100deg, var(--iris) 0%, var(--violet) 45%, var(--pink) 100%);
-		-webkit-background-clip: text;
-		background-clip: text;
-		color: transparent;
-	}
-
 	.shell {
-		@apply mx-auto w-full max-w-[76rem] px-5 sm:px-8;
+		@apply mx-auto w-full max-w-[74rem] px-5 sm:px-8;
 	}
 
-	.dot-grid {
-		background-image: radial-gradient(
-			color-mix(in srgb, var(--ink) 16%, transparent) 1px,
-			transparent 1px
-		);
-		background-size: 22px 22px;
+	.eyebrow {
+		@apply font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-brand;
 	}
 
-	.dot-grid-light {
-		background-image: radial-gradient(
-			color-mix(in srgb, white 18%, transparent) 1px,
-			transparent 1px
-		);
-		background-size: 22px 22px;
+	.frame {
+		@apply overflow-hidden rounded-md border border-ink/15 bg-card;
 	}
 
-	.hairline {
-		box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ink) 10%, transparent);
+	.hard-shadow {
+		box-shadow: 5px 5px 0 color-mix(in srgb, var(--ink) 12%, transparent);
 	}
 
-	.window-frame {
-		@apply overflow-hidden rounded-2xl border border-black/10 bg-white shadow-[0_24px_70px_-20px_rgba(22,19,31,0.45)];
-	}
-
-	.mask-fade-x {
-		-webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-		mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-	}
-}
-
-@keyframes float-gentle {
-	0%,
-	100% {
-		transform: translateY(0);
-	}
-	50% {
-		transform: translateY(-10px);
-	}
-}
-
-@keyframes marquee {
-	from {
-		transform: translateX(0);
-	}
-	to {
-		transform: translateX(-50%);
-	}
-}
-
-@keyframes pulse-dot {
-	0%,
-	100% {
-		opacity: 1;
-		box-shadow: 0 0 0 0 color-mix(in srgb, var(--pink) 45%, transparent);
-	}
-	50% {
-		opacity: 0.75;
-		box-shadow: 0 0 0 5px color-mix(in srgb, var(--pink) 0%, transparent);
-	}
-}
-
-.animate-float {
-	animation: float-gentle 8s ease-in-out infinite;
-}
-
-.animate-marquee {
-	animation: marquee 34s linear infinite;
-}
-
-.animate-pulse-dot {
-	animation: pulse-dot 2.4s ease-out infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-	*,
-	::before,
-	::after {
-		animation-duration: 0.01ms !important;
-		animation-iteration-count: 1 !important;
-		scroll-behavior: auto !important;
-		transition-duration: 0.01ms !important;
+	.prose-lead {
+		@apply text-[16px] leading-relaxed text-ink-soft sm:text-[17px];
 	}
 }

@@ -7,23 +7,39 @@ export type Project = {
 	href: string;
 	cta: string;
 	github: string;
-	badge?: string;
-	features?: string[];
-	tags?: string[];
+	features: string[];
 	mark: string;
 	markAlt: string;
 };
 
 export const projects: Project[] = [
 	{
+		id: 'swiftcrossui',
+		name: 'SwiftCrossUI',
+		kicker: 'UI framework · MIT',
+		tagline: 'SwiftUI, everywhere.',
+		description:
+			'A declarative UI framework inspired by SwiftUI. Write your interface once and run it natively on six platforms, with real platform backends under the hood.',
+		href: 'https://swiftcrossui.dev',
+		cta: 'Visit SwiftCrossUI',
+		github: 'https://github.com/moreSwift/swift-cross-ui',
+		features: [
+			'Declarative SwiftUI-style API',
+			'Native backends, no web views',
+			'Six platforms, one codebase'
+		],
+		mark: '/images/showcase/scui-icon.png',
+		markAlt: 'The SwiftCrossUI app icon'
+	},
+	{
 		id: 'swift-bundler',
 		name: 'Swift Bundler',
-		kicker: 'Build & distribution',
+		kicker: 'Build & distribution · v3.0.0',
 		tagline: 'Ship Swift apps. Anywhere.',
 		description:
-			'An Xcodeproj-less tool that turns Swift Package Manager executables into signed, distributable apps and native installers for every platform you care about.',
+			'A build and packaging tool that turns Swift Package Manager executables into signed apps and native installers, without an Xcode project to maintain.',
 		href: 'https://swiftbundler.dev',
-		cta: 'Explore Swift Bundler',
+		cta: 'Visit Swift Bundler',
 		github: 'https://github.com/moreSwift/swift-bundler',
 		features: [
 			'Windows, Linux and Android support',
@@ -32,25 +48,6 @@ export const projects: Project[] = [
 		],
 		mark: '/images/showcase/swift-bundler-crate.webp',
 		markAlt: 'The Swift Bundler crate logo'
-	},
-	{
-		id: 'swiftcrossui',
-		name: 'SwiftCrossUI',
-		kicker: 'UI framework',
-		tagline: 'SwiftUI, everywhere.',
-		description:
-			'A cross-platform declarative UI framework inspired by SwiftUI. Write your interface once and run it natively on six platforms, with controls that feel at home on each one.',
-		href: 'https://swiftcrossui.dev',
-		cta: 'Explore SwiftCrossUI',
-		github: 'https://github.com/moreSwift/swift-cross-ui',
-		badge: 'MIT · Open source',
-		features: [
-			'Declarative SwiftUI-style API',
-			'Native backends, no web views',
-			'Six platforms, one codebase'
-		],
-		mark: '/images/showcase/music-player-macos.webp',
-		markAlt: 'The MusicPlayerExample app running on macOS'
 	}
 ];
 
@@ -122,7 +119,7 @@ export const values: Value[] = [
 	},
 	{
 		icon: 'heart',
-		title: 'Open, and openly funded',
+		title: 'Community funded',
 		description:
 			'MIT licensed and built in public. Sponsorships fund maintenance, documentation and new platform support.'
 	}
