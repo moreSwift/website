@@ -5,6 +5,7 @@
 	import DiscordLogo from 'phosphor-svelte/lib/DiscordLogo';
 	import Heart from 'phosphor-svelte/lib/Heart';
 	import Brand from './Brand.svelte';
+	import SocialLink from './SocialLink.svelte';
 	import { site } from '$lib/site';
 
 	const columns = [
@@ -51,28 +52,21 @@
 					major platform. Built in public.
 				</p>
 				<div class="mt-6 flex flex-wrap gap-2">
-					<a
-						href={site.github}
-						target="_blank"
-						rel="noreferrer"
-						class="inline-flex items-center gap-2 rounded-md border border-white/15 px-3 py-1.5 font-mono text-[9px] uppercase tracking-[0.1em] text-paper/70 transition-colors hover:border-white/40 hover:text-paper"
-					>
-						<GithubLogo class="size-3.5" aria-hidden="true" /> GitHub
-					</a>
-					<a
-						href={site.discord}
-						class="inline-flex items-center gap-2 rounded-md border border-white/15 px-3 py-1.5 font-mono text-[9px] uppercase tracking-[0.1em] text-paper/70 transition-colors hover:border-white/40 hover:text-paper"
-					>
-						<DiscordLogo class="size-3.5" aria-hidden="true" /> Discord
-					</a>
-					<a
-						href={site.sponsor}
-						target="_blank"
-						rel="noreferrer"
-						class="inline-flex items-center gap-2 rounded-md border border-sponsor/40 bg-sponsor/10 px-3 py-1.5 font-mono text-[9px] uppercase tracking-[0.1em] text-sponsor-light transition-colors hover:border-sponsor/70 hover:text-white"
-					>
-						<Heart class="size-3.5" weight="fill" aria-hidden="true" /> Sponsor
-					</a>
+					<SocialLink href={site.github} label="GitHub" external>
+						{#snippet icon()}
+							<GithubLogo class="size-3.5" aria-hidden="true" />
+						{/snippet}
+					</SocialLink>
+					<SocialLink href={site.discord} label="Discord">
+						{#snippet icon()}
+							<DiscordLogo class="size-3.5" aria-hidden="true" />
+						{/snippet}
+					</SocialLink>
+					<SocialLink href={site.sponsor} label="Sponsor" tone="sponsor" external>
+						{#snippet icon()}
+							<Heart class="size-3.5" weight="fill" aria-hidden="true" />
+						{/snippet}
+					</SocialLink>
 				</div>
 			</div>
 
@@ -104,15 +98,15 @@
 		<Separator class="my-10 bg-white/10" />
 
 		<div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-			<p class="font-mono text-[9px] uppercase tracking-[0.12em] text-paper/45">
+			<p class="font-mono text-[11px] uppercase tracking-[0.12em] text-paper/45">
 				© {year} moreSwift · MIT licensed
 			</p>
-			<p class="font-mono text-[9px] uppercase tracking-[0.12em] text-paper/35">
+			<p class="font-mono text-[11px] uppercase tracking-[0.12em] text-paper/35">
 				Made with Swift, everywhere.
 			</p>
 			<a
 				href="#top"
-				class="group inline-flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.12em] text-paper/50 transition-colors hover:text-paper"
+				class="group inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.12em] text-paper/50 transition-colors hover:text-paper"
 			>
 				Back to top
 				<span
@@ -123,8 +117,8 @@
 			</a>
 		</div>
 
-		<p class="mt-8 text-[11px] text-paper/45">
-			SwiftCrossUI and Swift Bundler are projects of moreSwift.
+		<p class="mt-8 text-[13px] text-paper/45">
+			Swift and SwiftUI are trademarks of Apple Inc. moreSwift is not affiliated with Apple.
 		</p>
 	</div>
 </footer>

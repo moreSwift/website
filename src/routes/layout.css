@@ -41,7 +41,6 @@
 
 	/* Sponsor pink is only ever used for sponsorship */
 	--sponsor: #be185d;
-	--sponsor-soft: #fbe4ee;
 	--sponsor-light: #f9a8d4;
 
 	/* Project accents */
@@ -86,7 +85,6 @@
 	--color-brand-deep: var(--brand-deep);
 	--color-brand-soft: var(--brand-soft);
 	--color-sponsor: var(--sponsor);
-	--color-sponsor-soft: var(--sponsor-soft);
 	--color-sponsor-light: var(--sponsor-light);
 	--color-scui: var(--scui);
 	--color-scui-deep: var(--scui-deep);

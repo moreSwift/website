@@ -30,10 +30,10 @@ bun run build   # production build
 
 ## Structure
 
-- `src/routes/(pages)/+page.svelte` — homepage sections
-- `src/lib/components/site/` — page-level components (hero, header, project/video cards, etc.)
+- `src/routes/+page.svelte` — landing page composition
+- `src/lib/components/site/` — page sections and shared UI components
 - `src/lib/components/ui/` — shadcn-svelte primitives
-- `src/lib/content/` — projects, videos, values, community links and platform data
+- `src/lib/content/` — projects, videos, principles, community links and platform data
 - `src/lib/site.ts` — external URLs and navigation
 - `src/routes/layout.css` — theme tokens, fonts and shared utilities
 - `static/images/showcase/` — cross-platform app screenshots
