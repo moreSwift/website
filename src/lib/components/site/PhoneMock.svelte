@@ -1,7 +1,12 @@
 <script lang="ts">
 	import { cn } from '$lib/utils.js';
 
-	let { src, alt, class: className = '' }: { src: string; alt: string; class?: string } = $props();
+	let {
+		src,
+		alt,
+		kind,
+		class: className = ''
+	}: { src: string; alt: string; kind: 'ios' | 'android'; class?: string } = $props();
 </script>
 
 <div

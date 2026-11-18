@@ -19,13 +19,13 @@ export const projects: Project[] = [
 		kicker: 'UI framework · MIT',
 		tagline: 'SwiftUI, everywhere.',
 		description:
-			'A declarative UI framework inspired by SwiftUI. Write your interface once and run it natively on six platforms, with real platform backends under the hood.',
+			'A declarative UI framework inspired by SwiftUI. Write your interface once and run it natively on six platforms.',
 		href: 'https://swiftcrossui.dev',
 		cta: 'Visit SwiftCrossUI',
 		github: 'https://github.com/moreSwift/swift-cross-ui',
 		features: [
 			'Declarative SwiftUI-style API',
-			'Native backends, no web views',
+			'Native backends, not a web view',
 			'Six platforms, one codebase'
 		],
 		mark: '/images/showcase/swiftcrossui-logo.png',
@@ -37,14 +37,14 @@ export const projects: Project[] = [
 		kicker: 'Build & distribution · v3.0.0',
 		tagline: 'Ship Swift apps. Anywhere.',
 		description:
-			'A build and packaging tool that turns Swift Package Manager executables into signed apps and native installers, without an Xcode project to maintain.',
+			'A build and packaging tool that turns Swift Package Manager executable products into signed apps and native installers for any major platform.',
 		href: 'https://swiftbundler.dev',
 		cta: 'Visit Swift Bundler',
 		github: 'https://github.com/moreSwift/swift-bundler',
 		features: [
-			'Windows, Linux and Android support',
-			'Hot reload on macOS and Linux',
-			'One Bundler.toml with platform overlays'
+			'Six platforms',
+			'Hot reloading on macOS and Linux',
+			'Rich overlay-based configuration system'
 		],
 		mark: '/images/showcase/swift-bundler-logo.webp',
 		markAlt: 'The Swift Bundler crate logo'
@@ -107,17 +107,22 @@ export const principles: Principle[] = [
 	{
 		title: 'Native by default',
 		description:
-			'No web views or lookalike widgets. Every backend uses the platform’s real UI toolkit, so apps feel like they belong.'
+			'Every backend uses the platform’s native UI toolkit, so apps feel familiar. No web views in sight.'
 	},
 	{
 		title: 'One ecosystem',
 		description:
-			'SwiftCrossUI for the interface, Swift Bundler for the build. Two tools designed to work together from day one.'
+			'Our tools have been designed to work together from day one. Apps made with SwiftCrossUI automatically load Swift Bundler metadata and support hot reloading.'
+	},
+	{
+		title: 'Open and extensible',
+		description:
+			'Our projects are designed to be open and extensible. Swift Bundler can be used with any Swift UI framework, and third party frameworks can implement hot reloading support.'
 	},
 	{
 		title: 'Community funded',
 		description:
-			'MIT licensed and built in public. Sponsorships fund maintenance, documentation and new platform support.'
+			'FOSS licensed and built in public. Sponsorships fund maintenance, documentation and new platform support.'
 	}
 ];
 
