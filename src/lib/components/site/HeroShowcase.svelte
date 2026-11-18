@@ -97,10 +97,14 @@
 		/>
 	</div>
 
-	<PhoneMock
-		class="absolute -bottom-10 -left-7 z-10 hidden w-[7.6rem] rotate-[-3deg] sm:block"
-		src={currentMobilePreview.src}
-		alt={currentMobilePreview.alt}
-		kind={currentMobilePreview.id}
-	/>
+	<div
+		class="absolute -left-7 top-[calc(100%_-_5.4rem)] z-10 hidden w-[7.6rem] -translate-y-1/2 sm:block"
+	>
+		<PhoneMock
+			class="w-full rotate-[-3deg]"
+			src={currentMobilePreview.src}
+			alt={currentMobilePreview.alt}
+			kind={currentMobilePreview.id}
+		/>
+	</div>
 </div>
