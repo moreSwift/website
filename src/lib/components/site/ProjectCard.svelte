@@ -1,13 +1,13 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
 	import * as Card from '$lib/components/ui/card/index.js';
 	import ArrowRight from 'phosphor-svelte/lib/ArrowRight';
 	import GithubLogo from 'phosphor-svelte/lib/GithubLogo';
 	import Check from 'phosphor-svelte/lib/Check';
 	import type { Project } from '$lib/content';
 	import { cn } from '$lib/utils.js';
+	import ProjectPreview from './ProjectPreview.svelte';
 
-	let { project, media }: { project: Project; media: Snippet } = $props();
+	let { project }: { project: Project } = $props();
 
 	const themes = {
 		swiftcrossui: {
@@ -78,7 +78,7 @@
 				theme.media
 			)}
 		>
-			{@render media()}
+			<ProjectPreview {project} />
 		</div>
 
 		<ul class="mt-5 space-y-2 border-t border-line pt-4">

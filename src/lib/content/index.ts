@@ -98,27 +98,23 @@ export const videos: Video[] = [
 	}
 ];
 
-export type Value = {
-	icon: 'devices' | 'code' | 'heart';
+export type Principle = {
 	title: string;
 	description: string;
 };
 
-export const values: Value[] = [
+export const principles: Principle[] = [
 	{
-		icon: 'devices',
 		title: 'Native by default',
 		description:
 			'No web views or lookalike widgets. Every backend uses the platform’s real UI toolkit, so apps feel like they belong.'
 	},
 	{
-		icon: 'code',
 		title: 'One ecosystem',
 		description:
 			'SwiftCrossUI for the interface, Swift Bundler for the build. Two tools designed to work together from day one.'
 	},
 	{
-		icon: 'heart',
 		title: 'Community funded',
 		description:
 			'MIT licensed and built in public. Sponsorships fund maintenance, documentation and new platform support.'
