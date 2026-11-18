@@ -12,7 +12,7 @@
 	const themes = {
 		swiftcrossui: {
 			bar: 'bg-scui',
-			tile: 'bg-scui-deep',
+			tile: 'bg-cream',
 			kicker: 'text-scui',
 			link: 'text-scui hover:text-scui-deep',
 			media: 'bg-scui-soft'

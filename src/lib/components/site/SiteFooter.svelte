@@ -24,8 +24,7 @@
 				{ label: 'Swift Bundler docs', href: site.docsBundler },
 				{ label: 'Quick start', href: site.quickStart },
 				{ label: 'Videos', href: '/#videos' },
-				{ label: 'YouTube', href: site.youtube },
-				{ label: 'Type options', href: '/font-options' }
+				{ label: 'YouTube', href: site.youtube }
 			]
 		},
 		{
