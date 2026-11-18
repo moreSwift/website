@@ -1,10 +1,11 @@
 <script lang="ts">
 	import * as Tabs from '$lib/components/ui/tabs/index.js';
-	import IPhoneMock from './IPhoneMock.svelte';
+	import PhoneMock from './PhoneMock.svelte';
 
-	let selected = $state('macos');
+	let selectedDesktopPreview = $state('macos');
+	let selectedMobilePreview = $state('ios');
 
-	const previews = [
+	const desktopPreviews = [
 		{
 			id: 'macos',
 			label: 'macOS',
@@ -25,17 +26,38 @@
 		}
 	];
 
-	const current = $derived(previews.find((preview) => preview.id === selected) ?? previews[0]);
+	const mobilePreviews: { id: 'ios' | 'android'; label: string; src: string; alt: string }[] = [
+		{
+			id: 'ios',
+			label: 'iOS',
+			src: '/images/showcase/ios.webp',
+			alt: 'MusicPlayerExample running on an iPhone'
+		},
+		{
+			id: 'android',
+			label: 'Android',
+			src: '/images/showcase/android.webp',
+			alt: 'MusicPlayerExample running on a Google Pixel'
+		}
+	];
+
+	const currentDesktopPreview = $derived(
+		desktopPreviews.find((preview) => preview.id === selectedDesktopPreview) ?? desktopPreviews[0]
+	);
+
+	const currentMobilePreview = $derived(
+		mobilePreviews.find((preview) => preview.id === selectedMobilePreview) ?? mobilePreviews[0]
+	);
 </script>
 
 <div class="relative mx-auto w-full max-w-[34rem] lg:max-w-none">
 	<div class="frame hard-shadow relative">
-		<Tabs.Root bind:value={selected} class="gap-0">
-			<div
-				class="flex flex-wrap items-center justify-between gap-3 border-b border-line bg-card px-4 py-3"
-			>
+		<div
+			class="flex flex-wrap items-center justify-between gap-3 border-b border-line bg-card px-4 py-3"
+		>
+			<Tabs.Root bind:value={selectedDesktopPreview} class="gap-0">
 				<Tabs.List class="h-9 gap-1 rounded-md border border-line bg-paper-deep/50 p-1">
-					{#each previews as preview (preview.id)}
+					{#each desktopPreviews as preview (preview.id)}
 						<Tabs.Trigger
 							value={preview.id}
 							class="h-7 rounded-[4px] border-0 px-3 font-mono text-[10px] tracking-[0.01em] text-ink-soft hover:text-ink data-active:bg-ink data-active:text-paper data-active:hover:text-paper!"
@@ -44,32 +66,41 @@
 						</Tabs.Trigger>
 					{/each}
 				</Tabs.List>
-				<span class="font-mono text-[10px] text-ink-soft">
-					<span class="hidden sm:inline">MusicPlayerExample on</span>
-					<span class="sm:hidden">on</span>
-					<span class="ml-1 font-semibold text-ink">{current.label}</span>
-				</span>
-			</div>
+			</Tabs.Root>
 
-			{#each previews as preview (preview.id)}
-				<Tabs.Content value={preview.id} class="focus-visible:outline-none">
-					<img
-						src={preview.src}
-						alt={preview.alt}
-						width="1600"
-						height="1040"
-						class="aspect-[1.538] w-full object-cover"
-						loading={preview.id === 'macos' ? 'eager' : 'lazy'}
-						fetchpriority={preview.id === 'macos' ? 'high' : undefined}
-					/>
-				</Tabs.Content>
-			{/each}
-		</Tabs.Root>
+			<Tabs.Root bind:value={selectedMobilePreview} class="gap-0">
+				<Tabs.List class="h-9 gap-1 rounded-md border border-line bg-paper-deep/50 p-1">
+					{#each mobilePreviews as preview (preview.id)}
+						<Tabs.Trigger
+							value={preview.id}
+							class="h-7 rounded-[4px] border-0 px-3 font-mono text-[10px] tracking-[0.01em] text-ink-soft hover:text-ink data-active:bg-ink data-active:text-paper data-active:hover:text-paper!"
+						>
+							{preview.label}
+						</Tabs.Trigger>
+					{/each}
+				</Tabs.List>
+			</Tabs.Root>
+
+			<span class="font-mono text-[10px] text-ink-soft">
+				<span class="sm:inline">MusicPlayerExample</span>
+			</span>
+		</div>
+
+		<img
+			src={currentDesktopPreview.src}
+			alt={currentDesktopPreview.alt}
+			width="1600"
+			height="1040"
+			class="aspect-[1.538] w-full object-cover"
+			loading={currentDesktopPreview.id === 'macos' ? 'eager' : 'lazy'}
+			fetchpriority={currentDesktopPreview.id === 'macos' ? 'high' : undefined}
+		/>
 	</div>
 
-	<IPhoneMock
+	<PhoneMock
 		class="absolute -bottom-10 -left-7 z-10 hidden w-[7.6rem] rotate-[-3deg] sm:block"
-		src="/images/showcase/ios.webp"
-		alt="MusicPlayerExample running on an iPhone"
+		src={currentMobilePreview.src}
+		alt={currentMobilePreview.alt}
+		kind={currentMobilePreview.id}
 	/>
 </div>

@@ -16,7 +16,7 @@
 		title="Built in the open."
 		titleAccent="Funded by you."
 		breakBeforeAccent
-		lead="moreSwift is maintained by contributors around the world. Join the discussion, follow the work, or help fund the next platform."
+		lead="moreSwift is maintained by contributors around the world. Join the discussion, follow the work, or help fund it."
 		inverted
 	/>
 

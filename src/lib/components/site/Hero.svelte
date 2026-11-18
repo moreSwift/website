@@ -25,8 +25,8 @@
 			</h1>
 
 			<p class="prose-lead mt-6 max-w-[33rem]">
-				moreSwift is an open-source collective building tools that let you write one Swift codebase
-				and ship it natively to macOS, Windows, Linux, iOS and Android.
+				moreSwift is an open-source organization building tools that let you write native apps in
+				Swift and ship them to macOS, Windows, Linux, iOS and Android.
 			</p>
 
 			<div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">

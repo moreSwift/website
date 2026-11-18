@@ -83,12 +83,8 @@
 
 		<ul class="mt-5 space-y-2 border-t border-line pt-4">
 			{#each project.features as feature (feature)}
-				<li class="flex items-start gap-2 text-[12.5px] leading-snug text-ink-soft">
-					<Check
-						class={cn('mt-0.5 size-3.5 shrink-0', theme.kicker)}
-						weight="bold"
-						aria-hidden="true"
-					/>
+				<li class="flex items-center gap-2 text-[12.5px] leading-snug text-ink-soft">
+					<Check class={cn('size-3.5 shrink-0', theme.kicker)} weight="bold" aria-hidden="true" />
 					{feature}
 				</li>
 			{/each}
