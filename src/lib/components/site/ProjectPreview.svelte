@@ -6,18 +6,18 @@
 </script>
 
 {#if project.id === 'swiftcrossui'}
-	<div class="flex h-full w-full items-center justify-center p-4 sm:p-5">
+	<div class="flex h-full w-full min-w-0 items-center justify-center p-4 sm:p-5">
 		<img
 			src="/images/showcase/music-player-macos.webp"
 			alt="The MusicPlayerExample app running on macOS"
 			width="1600"
 			height="861"
 			loading="lazy"
-			class="max-h-full w-auto max-w-full rounded-[3px] border border-ink/10 object-contain"
+			class="h-full w-full min-w-0 object-contain"
 		/>
 	</div>
 {:else if project.id === 'swift-bundler'}
-	<div class="flex h-full items-center justify-center p-4 sm:p-5">
+	<div class="flex h-full w-full min-w-0 items-center justify-center p-4 sm:p-5">
 		<CodeWindow title="sbun — zsh" class="w-full">
 			<div class="space-y-1.5 font-mono text-[10.5px] leading-relaxed">
 				<p class="text-paper/85">

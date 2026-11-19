@@ -7,10 +7,12 @@
 </script>
 
 <Section id="mission" tone="muted">
-	<div class="border-t border-line pt-4">
+	<div class="border-line pt-4 lg:border-t">
 		<SectionLabel index="02" eyebrow="About moreSwift" />
 
-		<div class="mt-5 grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16">
+		<div
+			class="mt-5 grid grid-cols-1 gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16"
+		>
 			<div>
 				<SectionTitle
 					title="A small collective,"

@@ -24,7 +24,7 @@
 <section
 	{id}
 	class={cn(
-		'relative border-b py-20 sm:py-24',
+		'relative border-b py-12 sm:py-24',
 		tone === 'dark' ? 'border-white/10' : 'border-line',
 		tones[tone],
 		className

@@ -9,16 +9,16 @@
 
 <section class="border-b border-line bg-paper">
 	<div
-		class="shell grid gap-14 py-14 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:gap-16 lg:py-20"
+		class="shell grid grid-cols-1 gap-14 py-14 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:gap-16 lg:py-20"
 	>
 		<div class="min-w-0">
-			<div class="flex items-center gap-3">
+			<div class="hidden items-center gap-3 sm:flex">
 				<span class="h-px w-8 bg-brand" aria-hidden="true"></span>
 				<span class="eyebrow">Open source Swift tooling</span>
 			</div>
 
 			<h1
-				class="mt-5 text-[2.75rem] font-semibold leading-[0.99] tracking-[-0.035em] text-ink sm:text-[3.6rem] xl:text-[4.2rem]"
+				class="mt-0 text-[2.75rem] font-semibold leading-[0.99] tracking-[-0.035em] text-ink sm:mt-5 sm:text-[3.6rem] xl:text-[4.2rem]"
 			>
 				Native apps<br />cost more.<br />
 				<span class="italic text-brand">We’re fixing that.</span>
