@@ -17,7 +17,7 @@
 		</SectionAction>
 	</SectionHeading>
 
-	<div class="mt-10 grid gap-5 md:grid-cols-2">
+	<div class="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2">
 		{#each projects as project (project.id)}
 			<ProjectCard {project} />
 		{/each}

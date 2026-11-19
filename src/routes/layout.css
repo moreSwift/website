@@ -157,4 +157,22 @@
 	.prose-lead {
 		@apply text-[16px] leading-relaxed text-ink-soft sm:text-[17px];
 	}
+
+	.mask-fade-x {
+		-webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+		mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+	}
+}
+
+@keyframes marquee {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-50%);
+	}
+}
+
+.animate-marquee {
+	animation: marquee 24s linear infinite;
 }

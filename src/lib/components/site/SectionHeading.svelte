@@ -27,7 +27,7 @@
 	} = $props();
 </script>
 
-<div class={cn('border-t pt-4', inverted ? 'border-white/15' : 'border-line', className)}>
+<div class={cn('pt-4 lg:border-t', inverted ? 'border-white/15' : 'border-line', className)}>
 	<SectionLabel {index} {eyebrow} {inverted} />
 
 	<div class="mt-5 flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">

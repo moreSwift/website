@@ -42,9 +42,9 @@
 	const year = new Date().getFullYear();
 </script>
 
-<footer class="border-t border-white/10 bg-ink text-paper">
+<footer class="bg-ink text-paper">
 	<div class="shell py-14 sm:py-16">
-		<div class="grid gap-12 lg:grid-cols-[1.1fr_1.9fr]">
+		<div class="grid grid-cols-1 gap-12 lg:grid-cols-[1.1fr_1.9fr]">
 			<div>
 				<Brand inverted />
 				<p class="mt-5 max-w-sm text-[13px] leading-relaxed text-paper/60">

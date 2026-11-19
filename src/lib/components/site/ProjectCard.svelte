@@ -26,11 +26,13 @@
 		}
 	} as const;
 
+	const mediaSize = 'h-[15rem] sm:aspect-video sm:h-auto sm:min-h-[15rem]';
+
 	const theme = $derived(themes[project.id]);
 </script>
 
 <Card.Root
-	class="group flex h-full flex-col gap-0 overflow-hidden rounded-lg border border-line bg-card p-0 shadow-none ring-0 transition-colors hover:border-ink/30"
+	class="group flex h-full min-w-0 flex-col gap-0 overflow-hidden rounded-lg border border-line bg-card p-0 shadow-none ring-0 transition-colors hover:border-ink/30"
 >
 	<div class={cn('h-1.5 w-full', theme.bar)}></div>
 
@@ -74,7 +76,8 @@
 
 		<div
 			class={cn(
-				'mt-5 aspect-video min-h-[15rem] overflow-hidden rounded-md border border-line',
+				'mt-5 min-w-0 overflow-hidden rounded-md border border-line',
+				mediaSize,
 				theme.media
 			)}
 		>
