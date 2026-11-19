@@ -107,7 +107,7 @@ export const principles: Principle[] = [
 	{
 		title: 'Native by default',
 		description:
-			'Every backend uses the platform’s native UI toolkit, so apps feel familiar. No web views in sight.'
+			'Every SwiftCrossUI backend uses the platform’s native UI toolkit, and every Swift Bundler bundler uses the platform’s native formats, so apps feel right at home wherever you ship them.'
 	},
 	{
 		title: 'One ecosystem',
