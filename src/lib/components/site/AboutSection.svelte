@@ -6,8 +6,8 @@
 	import { principles } from '$lib/content';
 </script>
 
-<Section id="mission" tone="muted">
-	<div class="border-line pt-4 lg:border-t">
+<Section id="about" tone="muted">
+	<div>
 		<SectionLabel index="02" eyebrow="About moreSwift" />
 
 		<div
@@ -28,9 +28,13 @@
 				</div>
 			</div>
 
-			<div class="border-t border-line">
+			<div>
 				{#each principles as principle, index (principle.title)}
-					<PrincipleRow number={String(index + 1).padStart(2, '0')} {principle} />
+					<PrincipleRow
+						number={String(index + 1).padStart(2, '0')}
+						isLast={principles.length - 1 === index}
+						{principle}
+					/>
 				{/each}
 			</div>
 		</div>

@@ -17,6 +17,7 @@ export const site = {
 
 export const nav = [
 	{ label: 'Projects', href: '/#projects' },
+	{ label: 'About', href: '/#about' },
 	{ label: 'Videos', href: '/#videos' },
 	{ label: 'Community', href: '/#community' },
 	{ label: 'Sponsor', href: site.sponsor }
