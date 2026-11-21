@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>moreSwift — Open Graph preview</title>
+		<!--
+			Edit this file, then run `bun run og` to regenerate static/og.png.
+
+			The page is captured at exactly 1200×630. Keep the layout within that canvas.
+			Assets are served from the repository root by scripts/generate-og.mjs.
+		-->
+		<style>
+			@font-face {
+				font-family: 'Source Serif 4';
+				src: url('/node_modules/@fontsource-variable/source-serif-4/files/source-serif-4-latin-wght-normal.woff2')
+					format('woff2');
+				font-weight: 200 900;
+			}
+
+			@font-face {
+				font-family: 'Source Sans 3';
+				src: url('/node_modules/@fontsource-variable/source-sans-3/files/source-sans-3-latin-wght-normal.woff2')
+					format('woff2');
+				font-weight: 200 900;
+			}
+
+			@font-face {
+				font-family: 'JetBrains Mono';
+				src: url('/node_modules/@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2')
+					format('woff2');
+				font-weight: 100 800;
+			}
+
+			* {
+				box-sizing: border-box;
+				margin: 0;
+			}
+
+			html,
+			body {
+				width: 1200px;
+				height: 630px;
+				overflow: hidden;
+			}
+
+			body {
+				background: #f6f2e9;
+				color: #1c1916;
+				font-family: 'Source Sans 3', sans-serif;
+			}
+
+			.page {
+				height: 100%;
+				padding: 44px 60px 32px;
+				display: flex;
+				flex-direction: column;
+			}
+
+			/* Brand */
+
+			.brand {
+				display: flex;
+				align-items: center;
+				gap: 14px;
+			}
+
+			.brand-mark {
+				width: 54px;
+				height: 54px;
+				border-radius: 6px;
+				background: #1c1916;
+				display: grid;
+				place-items: center;
+			}
+
+			.brand-name {
+				font-family: 'Source Serif 4', serif;
+				font-size: 35px;
+				font-weight: 700;
+				line-height: 1;
+				letter-spacing: -0.8px;
+			}
+
+			.brand-tagline {
+				margin-top: 5px;
+				font-size: 16.5px;
+				font-weight: 500;
+				line-height: 1;
+				color: #6b6155;
+			}
+
+			/* Main content */
+
+			.main {
+				flex: 1;
+				display: flex;
+				align-items: center;
+				gap: 30px;
+				margin-bottom: 2rem;
+			}
+
+			.copy {
+				width: 590px;
+				padding-bottom: 4px;
+			}
+
+			.eyebrow {
+				display: flex;
+				align-items: center;
+				gap: 12px;
+				font-family: 'JetBrains Mono', monospace;
+				font-size: 10px;
+				font-weight: 500;
+				letter-spacing: 2.4px;
+				line-height: 1;
+				text-transform: uppercase;
+				color: #b8431f;
+			}
+
+			.eyebrow::before {
+				content: '';
+				width: 30px;
+				height: 1px;
+				background: #b8431f;
+			}
+
+			h1 {
+				margin-top: 18px;
+				font-family: 'Source Serif 4', serif;
+				font-size: 63px;
+				font-weight: 600;
+				line-height: 0.99;
+				letter-spacing: -2.2px;
+			}
+
+			.accent {
+				color: #b8431f;
+				font-style: italic;
+			}
+
+			.lead {
+				margin-top: 19px;
+				max-width: 540px;
+				font-size: 20px;
+				line-height: 1.45;
+				color: #5e554a;
+			}
+
+			.support {
+				margin-top: 20px;
+				font-size: 13px;
+				line-height: 1.4;
+				color: #5e554a;
+			}
+
+			.support span {
+				margin-left: 4px;
+				font-weight: 600;
+				color: #be185d;
+			}
+
+			/* Hero showcase */
+
+			.visual {
+				position: relative;
+				width: 460px;
+				height: 350px;
+				flex-shrink: 0;
+			}
+
+			.window {
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 480px;
+				overflow: hidden;
+				border: 1px solid rgba(28, 25, 22, 0.18);
+				border-radius: 6px;
+				background: #fffdf8;
+			}
+
+			.window-toolbar {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+				padding: 7px 9px;
+				border-bottom: 1px solid #dcd3c3;
+				background: #fffdf8;
+			}
+
+			.picker-group {
+				display: flex;
+				gap: 1px;
+				padding: 2px;
+				border: 1px solid #dcd3c3;
+				border-radius: 4px;
+				background: rgba(239, 232, 219, 0.55);
+			}
+
+			.picker-tab {
+				padding: 4px 7px;
+				border-radius: 3px;
+				font-family: 'JetBrains Mono', monospace;
+				font-size: 7.5px;
+				line-height: 1;
+				color: #5e554a;
+			}
+
+			.picker-tab.active {
+				background: #1c1916;
+				color: #f6f2e9;
+			}
+
+			.window-label {
+				margin-left: auto;
+				font-family: 'JetBrains Mono', monospace;
+				font-size: 8px;
+				line-height: 1;
+				color: #5e554a;
+			}
+
+			.window img {
+				display: block;
+				width: 100%;
+			}
+
+			.phone {
+				position: absolute;
+				left: -60px;
+				bottom: -28px;
+				width: 140px;
+				padding: 3px;
+				border-radius: 18px;
+				background: #3a3530;
+				box-shadow: 4px 4px 0 rgba(28, 25, 22, 0.16);
+				transform: rotate(-3deg);
+			}
+
+			.phone-bezel {
+				padding: 2px;
+				border-radius: 15px;
+				background: #000;
+			}
+
+			.phone-screen {
+				overflow: hidden;
+				border-radius: 13px;
+				background: #000;
+			}
+
+			.phone img {
+				display: block;
+				width: 100%;
+			}
+
+			/* Footer */
+
+			footer {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				border-top: 1px solid #dcd3c3;
+				padding-top: 14px;
+				font-family: 'JetBrains Mono', monospace;
+				font-size: 9px;
+				letter-spacing: 1.5px;
+				line-height: 1;
+				color: #6b6155;
+			}
+
+			.projects {
+				display: flex;
+				align-items: center;
+				gap: 18px;
+				color: #1c1916;
+			}
+
+			.project {
+				display: flex;
+				align-items: center;
+				gap: 7px;
+			}
+
+			.dot {
+				width: 6px;
+				height: 6px;
+				border-radius: 3px;
+			}
+
+			.dot.scui {
+				background: #1d4ed8;
+			}
+
+			.dot.sbun {
+				background: #70374d;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="page">
+			<header class="brand">
+				<div class="brand-mark">
+					<svg width="26" height="19" viewBox="0 0 80 59" fill="none" aria-hidden="true">
+						<rect
+							x="2.87733"
+							y="55.7244"
+							width="52.847"
+							height="73.9475"
+							rx="4.79556"
+							transform="rotate(-90 2.87733 55.7244)"
+							stroke="#f6f2e9"
+							stroke-width="5.75467"
+						/>
+						<rect
+							x="2.87733"
+							y="19.1822"
+							width="49.682"
+							height="36.5422"
+							rx="4.79556"
+							stroke="#f6f2e9"
+							stroke-width="5.75467"
+						/>
+						<rect
+							x="2.87733"
+							y="55.6285"
+							width="17.264"
+							height="34.9117"
+							rx="4.79556"
+							transform="rotate(-90 2.87733 55.6285)"
+							stroke="#f6f2e9"
+							stroke-width="5.75467"
+						/>
+					</svg>
+				</div>
+				<div>
+					<div class="brand-name">moreSwift</div>
+					<div class="brand-tagline">Swift, everywhere</div>
+				</div>
+			</header>
+
+			<main class="main">
+				<div class="copy">
+					<h1>
+						Native apps<br />
+						cost more.<br />
+						<span class="accent">We’re fixing that.</span>
+					</h1>
+					<p class="lead">
+						moreSwift builds tools that let you write native apps
+						in Swift and ship them to macOS, Windows, Linux, iOS and Android.
+					</p>
+				</div>
+
+				<div class="visual">
+					<div class="window">
+						<!-- Replace with any 1600×1040 or similar desktop screenshot. -->
+						<img src="/static/images/showcase/macos.webp" alt="" />
+					</div>
+					<div class="phone">
+						<div class="phone-bezel">
+							<div class="phone-screen">
+								<!-- Replace with any 553×1200 or similar phone screenshot. -->
+								<img src="/static/images/showcase/ios.webp" alt="" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+	</body>
+</html>
