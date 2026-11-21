@@ -28,6 +28,24 @@ bun run lint    # prettier + eslint
 bun run build   # production build
 ```
 
+## Open Graph image
+
+The social preview is generated from `scripts/og/index.html`.
+
+```sh
+bun run og
+```
+
+This renders the template at 1200×630 and writes `static/og.png`. You can pass a custom output
+path as the first argument:
+
+```sh
+bun run og some/other/preview.png
+```
+
+The generator uses a local Chrome or Chromium installation. If it can’t find one, set
+`CHROME_PATH` to the browser executable.
+
 ## Structure
 
 - `src/routes/+page.svelte` — landing page composition
@@ -36,6 +54,8 @@ bun run build   # production build
 - `src/lib/content/` — projects, videos, principles, community links and platform data
 - `src/lib/site.ts` — external URLs and navigation
 - `src/routes/layout.css` — theme tokens, fonts and shared utilities
+- `scripts/og/index.html` — editable Open Graph template
+- `scripts/generate-og.mjs` — renders the template to `static/og.png`
 - `static/images/showcase/` — cross-platform app screenshots
 - `static/images/video-thumbnails/` — YouTube thumbnails
 
