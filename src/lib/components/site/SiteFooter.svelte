@@ -49,7 +49,7 @@
 				<Brand inverted />
 				<p class="mt-5 max-w-sm text-[13px] leading-relaxed text-paper/60">
 					An independent, community-funded collective bringing native Swift app development to every
-					major platform. Built in public.
+					major platform.
 				</p>
 				<div class="mt-6 flex flex-wrap gap-2">
 					<SocialLink href={site.github} label="GitHub" external>
