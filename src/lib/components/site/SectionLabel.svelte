@@ -10,7 +10,7 @@
 
 <p
 	class={cn(
-		'font-mono text-[10px] uppercase tracking-[0.18em]',
+		'font-mono text-[12px] uppercase tracking-[0.18em]',
 		inverted ? 'text-paper/45' : 'text-ink-soft'
 	)}
 >
