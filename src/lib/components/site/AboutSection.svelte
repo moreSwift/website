@@ -14,17 +14,8 @@
 			class="mt-5 grid grid-cols-1 gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16"
 		>
 			<div>
-				<SectionTitle
-					title="A small collective,"
-					titleAccent="building in the open."
-					breakBeforeAccent
-				/>
-				<p
-					class="mt-8 font-display text-[1.65rem] leading-[1.25] tracking-[-0.015em] text-ink sm:text-[1.9rem]"
-				>
-					We build the tools we want to use, and give them away.
-				</p>
-				<div class="mt-5 space-y-4 text-[14px] leading-relaxed text-ink-soft">
+				<SectionTitle title="Our principles." titleAccent="" />
+				<div class="mt-5 space-y-4 text-[18px] leading-relaxed text-ink-soft">
 					<p>
 						moreSwift began with SwiftCrossUI and grew into a home for cross platform Swift tooling.
 						Today the organisation maintains SwiftCrossUI and Swift Bundler, with contributions from

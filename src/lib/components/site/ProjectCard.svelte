@@ -53,21 +53,18 @@
 				/>
 			</span>
 			<div class="min-w-0 flex-1">
-				<h3 class="text-[1.55rem] font-bold leading-none tracking-[-0.025em] text-ink">
+				<h3
+					class="text-[1.7rem] font-display font-medium leading-none tracking-[-0.025em] text-ink"
+				>
 					{project.name}
 				</h3>
-				<p
-					class={cn(
-						'mt-2 font-mono text-[9px] uppercase leading-none tracking-[0.13em]',
-						theme.kicker
-					)}
-				>
+				<p class={cn('mt-2 text-[13px] leading-none', theme.kicker)}>
 					{project.kicker}
 				</p>
 			</div>
 		</div>
 
-		<p class="mt-5 font-display text-[1.4rem] italic leading-snug text-ink/80">
+		<p class="mt-5 text-[1.35rem] italic leading-snug text-ink/80">
 			{project.tagline}
 		</p>
 		<p class="mt-3 text-[13.5px] leading-relaxed text-ink-soft">
