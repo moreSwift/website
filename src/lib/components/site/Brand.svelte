@@ -22,11 +22,8 @@
 				inverted ? 'text-paper' : 'text-ink'
 			)}>moreSwift</span
 		>
-		<span
-			class={cn(
-				'mt-1 font-mono text-[8px] uppercase leading-none tracking-[0.18em]',
-				inverted ? 'text-paper/45' : 'text-muted-foreground'
-			)}>Swift, everywhere</span
+		<span class={cn('text-[12px]', inverted ? 'text-paper/45' : 'text-muted-foreground')}
+			>Swift, everywhere</span
 		>
 	</span>
 </a>

@@ -9,7 +9,7 @@
 </script>
 
 <Section id="videos">
-	<SectionHeading index="03" eyebrow="Videos" title="Keep up with" titleAccent="our progress.">
+	<SectionHeading title="Keep up with" titleAccent="our progress.">
 		<SectionAction href={site.youtube} label="Watch on YouTube" external>
 			{#snippet icon()}
 				<YoutubeLogo class="size-4 text-brand" weight="fill" aria-hidden="true" />

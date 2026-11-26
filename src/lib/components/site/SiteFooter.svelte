@@ -98,15 +98,12 @@
 		<Separator class="my-10 bg-white/10" />
 
 		<div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-			<p class="font-mono text-[11px] uppercase tracking-[0.12em] text-paper/45">
-				© {year} moreSwift · MIT licensed
-			</p>
-			<p class="font-mono text-[11px] uppercase tracking-[0.12em] text-paper/35">
-				Made with Swift, everywhere.
+			<p class="text-[14px] text-paper/45">
+				© {year} moreSwift
 			</p>
 			<a
 				href="#top"
-				class="group inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.12em] text-paper/50 transition-colors hover:text-paper"
+				class="group inline-flex items-center gap-2 text-[14px] text-paper/50 transition-colors hover:text-paper"
 			>
 				Back to top
 				<span
