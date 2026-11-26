@@ -110,11 +110,6 @@ export const principles: Principle[] = [
 			'Every SwiftCrossUI backend uses the platform’s native UI toolkit, and every Swift Bundler bundler uses the platform’s native formats, so apps feel right at home wherever you ship them.'
 	},
 	{
-		title: 'One ecosystem',
-		description:
-			'Our tools have been designed to work together from day one. Apps made with SwiftCrossUI automatically load Swift Bundler metadata and support hot reloading.'
-	},
-	{
 		title: 'Open and extensible',
 		description:
 			'Our projects are designed to be open and extensible. Swift Bundler can be used with any Swift UI framework, and third party frameworks can implement hot reloading support.'
@@ -122,7 +117,7 @@ export const principles: Principle[] = [
 	{
 		title: 'Community funded',
 		description:
-			'FOSS licensed and built in public. Sponsorships fund maintenance, documentation and new platform support.'
+			'FOSS licensed and built in public. Sponsorship funds development, and helps keep us going.'
 	}
 ];
 
@@ -139,7 +134,7 @@ export const communityLinks: CommunityLink[] = [
 	{
 		icon: 'github',
 		title: 'GitHub',
-		description: 'Follow the work, file issues and contribute to both projects.',
+		description: 'Leaving us stars lets us know that people are excited about our mission.',
 		href: 'https://github.com/moreSwift',
 		handle: 'github.com/moreSwift',
 		cta: 'Browse the source'
@@ -147,7 +142,8 @@ export const communityLinks: CommunityLink[] = [
 	{
 		icon: 'discord',
 		title: 'Discord',
-		description: 'Ask questions, share what you’re building and shape the roadmap.',
+		description:
+			'Join the community to discuss our projects and stay up to date with the latest progress.',
 		href: '/discord',
 		handle: 'discord.gg/moreSwift',
 		cta: 'Join the community'
@@ -155,7 +151,7 @@ export const communityLinks: CommunityLink[] = [
 	{
 		icon: 'sponsor',
 		title: 'Open Collective',
-		description: 'Fund maintenance and help bring Swift to the next platform.',
+		description: 'Fund development and help us bring cross platform app development to Swift.',
 		href: 'https://opencollective.com/moreswift',
 		handle: 'opencollective.com/moreswift',
 		cta: 'Sponsor moreSwift'

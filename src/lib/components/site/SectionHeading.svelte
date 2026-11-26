@@ -5,8 +5,6 @@
 	import SectionTitle from './SectionTitle.svelte';
 
 	let {
-		index,
-		eyebrow,
 		title,
 		titleAccent = '',
 		lead = '',
@@ -15,8 +13,6 @@
 		class: className = '',
 		children
 	}: {
-		index: string;
-		eyebrow: string;
 		title: string;
 		titleAccent?: string;
 		lead?: string;
@@ -28,9 +24,7 @@
 </script>
 
 <div class={cn('', inverted ? 'border-white/15' : 'border-line', className)}>
-	<SectionLabel {index} {eyebrow} {inverted} />
-
-	<div class="mt-5 flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+	<div class="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
 		<SectionTitle {title} {titleAccent} {breakBeforeAccent} {inverted} />
 
 		{#if children}

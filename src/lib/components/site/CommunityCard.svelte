@@ -26,7 +26,12 @@
 	class="group block h-full"
 >
 	<Card.Root
-		class="h-full gap-0 rounded-lg border border-white/15 bg-transparent p-5 text-paper shadow-none ring-0 transition-colors group-hover:border-white/40 group-hover:bg-white/[0.025]"
+		class={cn(
+			'h-full gap-0 rounded-lg border p-5 text-paper shadow-none ring-0 transition-colors',
+			isSponsor
+				? 'border-sponsor/40 bg-sponsor/10 group-hover:border-sponsor/80 group-hover:bg-sponsor/15'
+				: 'border-white/15 bg-transparent group-hover:border-white/40 group-hover:bg-white/[0.025]'
+		)}
 	>
 		<div class="flex items-start justify-between gap-3">
 			<span

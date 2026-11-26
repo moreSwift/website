@@ -22,7 +22,7 @@
 				<a
 					href={item.href}
 					class={cn(
-						'text-[13px] font-medium transition-colors',
+						'text-[14px] font-medium transition-colors',
 						item.label === 'Sponsor'
 							? 'text-sponsor hover:text-[#9d174d]'
 							: 'text-ink-soft hover:text-ink'
@@ -48,7 +48,7 @@
 
 			<Button
 				href={site.quickStart}
-				class="hidden h-10 gap-1.5 rounded-md bg-ink px-4 text-[12px] font-semibold text-paper hover:bg-ink/90 sm:inline-flex"
+				class="hidden h-10 gap-1.5 rounded-md bg-ink px-4 text-[14px] font-semibold text-paper hover:bg-ink/90 sm:inline-flex"
 			>
 				Start building
 				<ArrowUpRight class="size-3.5" weight="bold" aria-hidden="true" />

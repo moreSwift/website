@@ -9,7 +9,7 @@
 </script>
 
 <Section id="projects">
-	<SectionHeading index="01" eyebrow="Projects" title="Two projects." titleAccent="One ecosystem.">
+	<SectionHeading title="Our projects.">
 		<SectionAction href={site.github} label="View the org on GitHub" external>
 			{#snippet icon()}
 				<GithubLogo class="size-4" aria-hidden="true" />
