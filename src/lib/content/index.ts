@@ -34,7 +34,7 @@ export const projects: Project[] = [
 	{
 		id: 'swift-bundler',
 		name: 'Swift Bundler',
-		kicker: 'Build & distribution · v3.0.0',
+		kicker: 'Build & distribution · Apache 2.0',
 		tagline: 'Ship Swift apps. Anywhere.',
 		description:
 			'A build and packaging tool that turns Swift Package Manager executable products into signed apps and native installers for any major platform.',
