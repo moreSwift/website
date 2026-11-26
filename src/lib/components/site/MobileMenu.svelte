@@ -28,13 +28,12 @@
 	</Sheet.Trigger>
 
 	<Sheet.Content side="right" class="bg-paper text-ink">
-		<Sheet.Header class="gap-1">
-			<Brand class="mb-5" />
-			<Sheet.Title class="font-display text-2xl font-bold">Menu</Sheet.Title>
-			<Sheet.Description class="text-muted-foreground">Explore moreSwift</Sheet.Description>
+		<Sheet.Header class="pb-3">
+			<Brand />
+			<Sheet.Title class="sr-only">Site navigation</Sheet.Title>
 		</Sheet.Header>
 
-		<nav class="mt-2 flex flex-col" aria-label="Mobile">
+		<nav class="flex flex-col px-4" aria-label="Mobile">
 			{#each nav as item (item.label)}
 				<a
 					href={item.href}
